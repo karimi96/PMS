@@ -24,4 +24,32 @@
         <item name="android:fontFamily">@font/iran_sans</item>
         <item name="android:textSize">16dp</item>
     </style>
+
+
+    <style name="CustomEditText">
+        <item name="android:fontFamily">@font/iran_sans_fanum</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:textColor">@color/text_main</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/item_back_validation</item>
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">number</item>
+    </style>
+
+    <style name="CustomTextInputType" parent="Widget.Design.TextInputLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">30dp</item>
+        <item name="android:layout_marginEnd">33dp</item>
+        <item name="endIconTint">@color/text_hint</item>
+        <item name="startIconTint">@color/text_hint</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+
+
+    </style>
+
+
 </resources>
