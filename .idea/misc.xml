@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/btn.xml" value="0.153" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/item_back_validation.xml" value="0.148" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/phone_ic.xml" value="0.161" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/pic_sign_up.xml" value="0.1485" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/activity_login.xml" value="0.2" />
@@ -14,7 +15,7 @@
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/login_email.xml" value="0.18" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/login_pass.xml" value="0.19384057971014493" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/sign_up.xml" value="0.22" />
-        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/vertification.xml" value="0.19384057971014493" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/vertification.xml" value="0.22" />
       </map>
     </option>
   </component>
