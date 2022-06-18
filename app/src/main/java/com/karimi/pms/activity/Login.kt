@@ -14,7 +14,8 @@ class Login : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        email_ac.continueEmail.setOnClickListener { toast("btn clicked") }
+//        email_ac.continueEmail.setOnClickListener { email_ac.visibility = View.GONE
+//        pass_ac.visibility = View.VISIBLE}
     }
 
 

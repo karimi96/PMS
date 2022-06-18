@@ -6,7 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".activity.Login">
 
-   <include android:id="@+id/email_ac"
-       layout="@layout/login_email" />
+<!--   <include android:id="@+id/email_ac"-->
+<!--       layout="@layout/login_email" />-->
+
+<!--   <include android:id="@+id/pass_ac"-->
+<!--       layout="@layout/login_pass"-->
+<!--       android:visibility="gone"/>-->
+
+   <include android:id="@+id/pass_ac"
+       layout="@layout/sign_up"
+       android:visibility="visible"/>
 
 </RelativeLayout>
