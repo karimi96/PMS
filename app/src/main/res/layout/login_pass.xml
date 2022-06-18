@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:focusableInTouchMode="true">
 
 
     <ImageView
@@ -15,6 +16,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:src="@drawable/back_ic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 
     <!--    <ImageView-->
@@ -29,27 +39,25 @@
     <!--        app:layout_constraintVertical_bias="0.55" />-->
 
 
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textField"
         style="@style/Widget.Design.TextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
         android:hint="رمز عبور"
+        android:textColorHint="@color/text_hint"
         app:endIconMode="password_toggle"
         app:endIconTint="@color/text_hint"
-        android:textColorHint="@color/text_hint"
-        android:layout_marginEnd="35dp"
-        android:layout_marginStart="35dp"
-        app:layout_constraintBottom_toTopOf="@+id/continueEmail"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+        app:layout_constraintBottom_toTopOf="@+id/guideline1">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/text_hint"
-            android:drawablePadding="10dp"
             android:drawableStart="@drawable/lock_ic"
+            android:drawablePadding="10dp"
             android:fontFamily="@font/iran_sans_fanum"
             android:imeOptions="actionDone"
             android:inputType="textPassword"
@@ -71,12 +79,11 @@
         app:layout_constraintStart_toStartOf="@id/textField" />
 
 
-
     <TextView
         android:id="@+id/continueEmail"
         style="@style/CustomText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginHorizontal="35dp"
@@ -84,21 +91,21 @@
         android:gravity="center"
         android:paddingVertical="15dp"
         android:text="تایید"
+        android:textSize="16dp"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guideline"
-        app:layout_constraintVertical_bias="0.6"
-        />
+        app:layout_constraintBottom_toBottomOf="@id/guideline7"
+        app:layout_constraintTop_toTopOf="@id/guideline7"
+        app:layout_constraintVertical_bias="0.6" />
 
     <TextView
         android:id="@+id/forgetPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/iran_sans"
         android:text="فراموشی رمز عبور؟"
         android:textColor="@color/blue"
-        android:textSize="14dp"
-        android:fontFamily="@font/iran_sans"
+        android:textSize="13dp"
         app:layout_constraintEnd_toEndOf="@+id/continueEmail"
         app:layout_constraintStart_toStartOf="@+id/continueEmail"
         app:layout_constraintTop_toBottomOf="@+id/continueEmail" />
@@ -109,6 +116,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4" />
+        app:layout_constraintGuide_percent="0.4528044" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5718194" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.72" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
