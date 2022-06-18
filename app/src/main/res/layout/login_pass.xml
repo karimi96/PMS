@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:src="@drawable/pic_login_email"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/imageView3"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="35dp"-->
+    <!--        android:src="@drawable/phone_ic"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/textView"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/imageView2"-->
+    <!--        app:layout_constraintVertical_bias="0.55" />-->
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textField"
+        style="@style/Widget.Design.TextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="رمز عبور"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/text_hint"
+        android:textColorHint="@color/text_hint"
+        android:layout_marginEnd="35dp"
+        android:layout_marginStart="35dp"
+        app:layout_constraintBottom_toTopOf="@+id/continueEmail"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/text_hint"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/lock_ic"
+            android:fontFamily="@font/iran_sans_fanum"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:paddingVertical="10dp"
+            android:textColor="@color/text_main"
+            android:textColorHint="@color/text_hint"
+            android:textSize="16dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="36dp"
+        android:layout_height="3dp"
+        android:layout_marginBottom="7.1dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/textField"
+        app:layout_constraintStart_toStartOf="@id/textField" />
+
+
+
+    <TextView
+        android:id="@+id/continueEmail"
+        style="@style/CustomText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="35dp"
+        android:background="@drawable/item_btn_background"
+        android:gravity="center"
+        android:paddingVertical="15dp"
+        android:text="تایید"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline"
+        app:layout_constraintVertical_bias="0.6"
+        />
+
+    <TextView
+        android:id="@+id/forgetPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="فراموشی رمز عبور؟"
+        android:textColor="@color/blue"
+        android:textSize="14dp"
+        android:fontFamily="@font/iran_sans"
+        app:layout_constraintEnd_toEndOf="@+id/continueEmail"
+        app:layout_constraintStart_toStartOf="@+id/continueEmail"
+        app:layout_constraintTop_toBottomOf="@+id/continueEmail" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
