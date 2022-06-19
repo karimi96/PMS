@@ -1,5 +1,6 @@
 package com.karimi.pms.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -35,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
 
         countDownTimer()
 
-        in_pass.nextPass.setOnClickListener {  }
+        in_pass.nextPass.setOnClickListener { startActivity(Intent(this,HomeActivity ::class.java)) }
     }
 
 
