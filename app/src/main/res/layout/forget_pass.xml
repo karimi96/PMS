@@ -97,7 +97,7 @@
 
 
     <TextView
-        android:id="@+id/continueEmail"
+        android:id="@+id/nextEmail"
         style="@style/CustomText"
         android:layout_width="match_parent"
         android:layout_height="56dp"
@@ -107,6 +107,7 @@
         android:background="@drawable/item_btn_background"
         android:gravity="center"
         android:text="ادامه"
+        android:textSize="16dp"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintTop_toTopOf="@+id/guideline4" />
