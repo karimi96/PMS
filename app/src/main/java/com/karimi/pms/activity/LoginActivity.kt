@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.login_pass.*
 import kotlinx.android.synthetic.main.login_pass.view.*
 import kotlinx.android.synthetic.main.vertification.view.*
 
-class Login : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)

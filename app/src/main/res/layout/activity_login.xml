@@ -4,17 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.Login">
+    tools:context=".activity.LoginActivity">
 
-<!--   <include android:id="@+id/email_ac"-->
-<!--       layout="@layout/login_email" />-->
-
-<!--   <include android:id="@+id/pass_ac"-->
-<!--       layout="@layout/login_pass"-->
-<!--       android:visibility="gone"/>-->
-
-   <include android:id="@+id/pass_ac"
-       layout="@layout/sign_up"
+   <include android:id="@+id/in_email"
+       layout="@layout/login_email"
        android:visibility="visible"/>
+
+   <include android:id="@+id/in_pass"
+       layout="@layout/login_pass"
+       android:visibility="gone"/>
+
+   <include android:id="@+id/in_forgetPass"
+       layout="@layout/forget_pass"
+       android:visibility="gone"/>
+
+   <include android:id="@+id/in_vertification"
+       layout="@layout/vertification"
+       android:visibility="gone"/>
+
+   <include android:id="@+id/in_signUp"
+       layout="@layout/sign_up"
+       android:visibility="gone"/>
+
 
 </RelativeLayout>
