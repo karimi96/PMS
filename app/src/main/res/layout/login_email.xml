@@ -18,6 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
         android:id="@+id/textView2"
         style="@style/CustomText"
@@ -27,20 +28,20 @@
         android:layout_marginTop="15dp"
         android:text="لطفا شماره همراه خود را وارد نمایید."
         android:textColor="@color/text_main"
+        android:textSize="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline" />
 
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView3"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="35dp"-->
-<!--        android:src="@drawable/phone_ic"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/textView"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/imageView2"-->
-<!--        app:layout_constraintVertical_bias="0.55" />-->
-
+    <!--    <ImageView-->
+    <!--        android:id="@+id/imageView3"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="35dp"-->
+    <!--        android:src="@drawable/phone_ic"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/textView"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/imageView2"-->
+    <!--        app:layout_constraintVertical_bias="0.55" />-->
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -48,11 +49,11 @@
         style="@style/Widget.Design.TextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginEnd="35dp"
         android:hint="تلفن همراه"
         android:textColorHint="@color/text_hint"
-        android:layout_marginEnd="35dp"
-        android:layout_marginStart="35dp"
-        app:layout_constraintBottom_toTopOf="@+id/continueEmail"
+        app:layout_constraintBottom_toTopOf="@+id/nextEmail"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         tools:ignore="MissingConstraints">
 
@@ -60,8 +61,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/text_hint"
-            android:drawablePadding="10dp"
             android:drawableStart="@drawable/phone_ic"
+            android:drawablePadding="10dp"
             android:fontFamily="@font/iran_sans_fanum"
             android:imeOptions="actionDone"
             android:inputType="phone"
@@ -73,20 +74,18 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
-
     <View
         android:layout_width="36dp"
         android:layout_height="3dp"
-        android:background="@color/white"
-        android:layout_marginBottom="7.1dp"
         android:layout_marginEnd="4.3dp"
+        android:layout_marginBottom="7.1dp"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="@id/textField"
         app:layout_constraintStart_toStartOf="@id/textField" />
 
 
-
     <TextView
-        android:id="@+id/continueEmail"
+        android:id="@+id/nextEmail"
         style="@style/CustomText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -97,6 +96,7 @@
         android:gravity="center"
         android:paddingVertical="15dp"
         android:text="ادامه"
+        android:textSize="16dp"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline"
@@ -104,11 +104,31 @@
         tools:layout_editor_absoluteX="35dp" />
 
 
+    <TextView
+        android:id="@+id/tv_join"
+        android:fontFamily="@font/iran_sans"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="عضویت"
+        android:textSize="16dp"
+        android:textColor="@color/text_main"
+        android:layout_margin="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4" />
+        app:layout_constraintGuide_percent="0.45" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.57" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

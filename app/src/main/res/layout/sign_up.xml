@@ -129,7 +129,7 @@
 
 
     <TextView
-        android:id="@+id/continueEmail"
+        android:id="@+id/nextEmail"
         style="@style/CustomText"
         android:layout_width="match_parent"
         android:layout_height="56dp"

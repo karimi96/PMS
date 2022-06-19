@@ -40,29 +40,25 @@
         android:layout_marginHorizontal="30dp"
         android:orientation="horizontal"
         android:weightSum="5"
-        app:layout_constraintBottom_toTopOf="@+id/continueEmail"
+        app:layout_constraintBottom_toTopOf="@+id/nextVertification"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.35000002"
+        app:layout_constraintVertical_bias="0.39"
         tools:layout_editor_absoluteX="30dp">
 
-        <EditText
-           style="@style/CustomEditText" />
+        <EditText style="@style/CustomEditText" />
 
-        <EditText
-           style="@style/CustomEditText" />
+        <EditText style="@style/CustomEditText" />
 
-        <EditText
-           style="@style/CustomEditText" />
+        <EditText style="@style/CustomEditText" />
 
-        <EditText
-           style="@style/CustomEditText"/>
+        <EditText style="@style/CustomEditText" />
 
-        <EditText
-            style="@style/CustomEditText" />
+        <EditText style="@style/CustomEditText" />
 
     </LinearLayout>
 
     <TextView
+        android:id="@+id/timer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="35dp"
@@ -75,7 +71,7 @@
 
 
     <TextView
-        android:id="@+id/continueEmail"
+        android:id="@+id/nextVertification"
         style="@style/CustomText"
         android:layout_width="match_parent"
         android:layout_height="56dp"

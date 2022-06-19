@@ -80,7 +80,7 @@
 
 
     <TextView
-        android:id="@+id/continueEmail"
+        android:id="@+id/nextPass"
         style="@style/CustomText"
         android:layout_width="match_parent"
         android:layout_height="56dp"
@@ -106,9 +106,9 @@
         android:text="فراموشی رمز عبور؟"
         android:textColor="@color/blue"
         android:textSize="13dp"
-        app:layout_constraintEnd_toEndOf="@+id/continueEmail"
-        app:layout_constraintStart_toStartOf="@+id/continueEmail"
-        app:layout_constraintTop_toBottomOf="@+id/continueEmail" />
+        app:layout_constraintEnd_toEndOf="@+id/nextPass"
+        app:layout_constraintStart_toStartOf="@+id/nextPass"
+        app:layout_constraintTop_toBottomOf="@+id/nextPass" />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -130,7 +130,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.72" />
+        app:layout_constraintGuide_percent="0.71956223" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
