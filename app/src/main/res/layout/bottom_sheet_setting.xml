@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_548sdp">
+
+    <View
+        android:id="@+id/line"
+        android:background="@color/text_main"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="3dp"/>
+
+    <View
+        android:id="@+id/line1"
+        android:background="@color/border_line"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_120sdp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/line"
+        android:layout_alignBottom="@id/line1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/_77sdp"
+            android:layout_height="@dimen/_77sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:src="@drawable/picture_user" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/iran_sans"
+                android:gravity="right"
+                android:text="رقیه کریمی"
+                android:textColor="@color/text_main"
+                android:textSize="@dimen/_16sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/iran_sans_fanum"
+                android:gravity="right"
+                android:text="09334659477"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/_12sdp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/moon"
+        android:text="حالت شب"
+        android:fontFamily="@font/iran_sans"
+        android:textSize="@dimen/_16sdp"
+        android:drawablePadding="@dimen/_10sdp"
+        android:layout_below="@id/line1"
+        android:textColor="@color/text_main"
+        android:drawableRight="@drawable/moon_ic"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/moon"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_26sdp"
+        android:drawableRight="@drawable/setting2_ic"
+        android:drawablePadding="@dimen/_10sdp"
+        android:fontFamily="@font/iran_sans"
+        android:text="تنظیمات"
+        android:textColor="@color/text_main"
+        android:textSize="@dimen/_16sdp" />
+
+    <Switch
+        android:layout_below="@id/line1"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/_19sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+        android:text="خروج از حساب کاربری"
+        android:layout_alignParentBottom="true"
+        android:drawableStart="@drawable/exist_ic"
+        android:textColor="#E4897B"
+        android:textSize="@dimen/_16sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_30sdp"
+        android:drawablePadding="@dimen/_10sdp"
+        android:fontFamily="@font/iran_sans"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>
