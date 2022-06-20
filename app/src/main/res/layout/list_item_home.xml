@@ -1,57 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content">
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_marginBottom="15dp"
-        app:cardElevation="2dp"
-        app:cardCornerRadius="5dp"
-        android:outlineSpotShadowColor="#E4897B"
+        android:layout_height="80dp"
         android:layout_marginHorizontal="16dp"
-        android:layout_height="80dp">
+        android:layout_marginBottom="15dp"
+        app:cardCornerRadius="6dp"
+        android:foreground="@drawable/item_border_gray"
+        android:outlineSpotShadowColor="#e8e8e8"
+        app:cardElevation="2dp">
 
         <RelativeLayout
-            android:background="@drawable/item_border_red"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
-                android:layout_alignParentStart="true"
-                android:text="رفع خرابی"
+                android:id="@+id/title"
                 style="@style/CustomText"
-                android:textColor="@color/text_main"
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="10dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="رفع خرابی"
+                android:textColor="@color/text_main" />
 
 
             <ImageView
                 android:id="@+id/img_place"
-                android:src="@drawable/place_ic"
-                android:layout_marginBottom="5dp"
-                android:layout_marginStart="10dp"
-                android:layout_alignParentBottom="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_toEndOf="@id/img_place"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/place_gray_ic" />
+
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
                 android:layout_marginStart="5dp"
+                android:layout_marginBottom="2dp"
+                android:layout_toEndOf="@id/img_place"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:layout_marginEnd="70dp"
+                android:layout_toStartOf="@+id/dayName"
                 android:fontFamily="@font/iran_sans_fanum"
-                android:text="15 خرداد کوچه 39"
+                android:text="15 خرداد کوچه 39 15 خرداد کوچه 39 15 خرداد کوچه 39"
                 android:textColor="@color/text_main"
                 android:textSize="14dp" />
 
             <TextView
+                android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -59,7 +68,7 @@
                 android:layout_marginEnd="10dp"
                 android:fontFamily="@font/iran_sans_fanum"
                 android:text="1401/03/28"
-                android:textColor="#E4897B"
+                android:textColor="@color/text_hint"
                 android:textSize="12dp" />
 
 
@@ -67,27 +76,28 @@
                 android:id="@+id/circle"
                 android:layout_width="7dp"
                 android:layout_height="7dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/back_circle"
-                android:fontFamily="@font/iran_sans_fanum"
-                android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="10dp"
+                android:layout_alignParentBottom="true"
                 android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/circle_gray"
+                android:fontFamily="@font/iran_sans_fanum"
                 android:textColor="@color/text_main"
                 android:textSize="12dp" />
 
 
             <TextView
+                android:id="@+id/dayName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="2dp"
+                android:layout_toStartOf="@id/circle"
                 android:fontFamily="@font/iran_sans_fanum"
                 android:text="فوری"
-
-                android:layout_marginEnd="5dp"
-                android:layout_toStartOf="@id/circle"
-                android:textColor="#E4897B"
+                android:textColor="@color/text_hint"
                 android:textSize="12dp" />
 
         </RelativeLayout>
