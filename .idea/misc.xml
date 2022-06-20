@@ -8,6 +8,7 @@
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable-v24/item_border_red.xml" value="0.1465" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/back_circle.xml" value="0.18" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/btn.xml" value="0.153" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/item_back_bottom_sheet.xml" value="0.119" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/item_back_validation.xml" value="0.148" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/item_border_gray.xml" value="0.1465" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/phone_ic.xml" value="0.161" />
@@ -19,7 +20,7 @@
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/activity_login_email.xml" value="0.17572463768115942" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/activity_main.xml" value="0.19384057971014493" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/activity_main2.xml" value="0.19010416666666666" />
-        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/bottom_sheet_filter.xml" value="0.19882246376811594" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/bottom_sheet_filter.xml" value="0.33" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/bottom_sheet_setting.xml" value="0.2" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/forget_pass.xml" value="0.25" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/list_item_home.xml" value="0.4174107142857143" />
