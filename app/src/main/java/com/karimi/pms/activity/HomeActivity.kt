@@ -100,9 +100,31 @@ class HomeActivity : AppCompatActivity() ,RequestAdapter.Listener{
             dialog.close_detail.visibility = View.GONE
             dialog.posModel_t.visibility = View.VISIBLE
             dialog.posModel.visibility = View.GONE
+            dialog.posIcon.visibility = View.GONE
         }
+
+//        dialog.tv_doing.setOnClickListener {  }
+        dialog.cancel.setOnClickListener { reasonOfCancel() }
+
+
             dialog.window?.setBackgroundDrawableResource(R.drawable.item_border_dialog)
             dialog.show()
+    }
+
+
+
+    fun reasonOfCancel(){
+        val metrics = resources.displayMetrics
+        val width = metrics.widthPixels
+        val height = metrics.heightPixels
+        val dialog = Dialog(this)
+        dialog.setContentView(R.layout.dialog_reason_cansel)
+//        dialog.setCancelable(false)
+        dialog.window?.setLayout(
+            ((6.3 * width) / 7).toInt(),
+            ViewGroup.LayoutParams.WRAP_CONTENT)
+        dialog.window?.setBackgroundDrawableResource(R.drawable.item_border_dialog)
+        dialog.show()
     }
 
 
