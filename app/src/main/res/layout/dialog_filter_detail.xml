@@ -57,170 +57,155 @@
 
     </RelativeLayout>
 
-<ScrollView
-    android:id="@+id/scroll"
-    android:layout_below="@id/rv"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            <RelativeLayout
+                android:id="@+id/rv1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line"
+                android:layout_marginTop="3dp">
 
+                <ImageView
+                    android:id="@+id/user_ic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/user_gray_ic" />
 
-    <RelativeLayout
-        android:id="@+id/rv1"
-        android:layout_marginTop="3dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/line">
+                <TextView
+                    android:id="@+id/nameUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@id/user_ic"
+                    android:fontFamily="@font/iran_sans"
+                    android:text="مسعود الهی نیا"
+                    android:textColor="@color/text_main"
+                    android:textSize="14dp" />
 
-        <ImageView
-            android:id="@+id/user_ic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="20dp"
-            android:src="@drawable/user_gray_ic" />
+                <ImageView
+                    android:id="@+id/posIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/pos_ic" />
 
-        <TextView
-            android:id="@+id/nameUser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="10dp"
-            android:layout_toEndOf="@id/user_ic"
-            android:fontFamily="@font/iran_sans"
-            android:text="مسعود الهی نیا"
-            android:textColor="@color/text_main"
-            android:textSize="14dp" />
+                <TextView
+                    android:id="@+id/posModel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@id/posIcon"
+                    android:fontFamily="@font/iran_sans"
+                    android:gravity="bottom"
+                    android:text="S800"
+                    android:textColor="@color/text_main"
+                    android:textSize="15dp" />
 
-        <ImageView
-            android:id="@+id/posIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="20dp"
-            android:src="@drawable/pos_ic" />
+            </RelativeLayout>
 
-        <TextView
-            android:id="@+id/posModel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:gravity="bottom"
-            android:layout_marginTop="5dp"
-            android:layout_toStartOf="@id/posIcon"
-            android:fontFamily="@font/iran_sans"
-            android:text="S800"
-            android:textColor="@color/text_main"
-            android:textSize="15dp" />
+            <RelativeLayout
+                android:id="@+id/rv2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rv1"
+                android:paddingBottom="5dp">
 
-    </RelativeLayout>
+                <ImageView
+                    android:id="@+id/phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/phone_call_ic" />
 
-    <RelativeLayout
-        android:id="@+id/rv2"
-        android:paddingBottom="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rv1">
-
-        <ImageView
-            android:id="@+id/phone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="5dp"
-            android:src="@drawable/phone_call_ic" />
-
-        <TextView
-            android:id="@+id/phoneUser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/phone"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="8dp"
-            android:layout_toEndOf="@id/phone"
-            android:fontFamily="@font/iran_sans_fanum"
-            android:text="09121537381"
-            android:textColor="@color/text_main"
-            android:textSize="14dp" />
+                <TextView
+                    android:id="@+id/phoneUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/phone"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toEndOf="@id/phone"
+                    android:fontFamily="@font/iran_sans_fanum"
+                    android:text="09121537381"
+                    android:textColor="@color/text_main"
+                    android:textSize="14dp" />
 
 
-    </RelativeLayout>
+            </RelativeLayout>
 
 
-    <RelativeLayout
-        android:id="@+id/rv3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rv2">
+            <RelativeLayout
+                android:id="@+id/rv3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rv2">
 
-        <ImageView
-            android:id="@+id/home_ic"
-            android:layout_marginTop="8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="20dp"
-            android:src="@drawable/home_ic" />
+                <ImageView
+                    android:id="@+id/home_ic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/home_ic" />
 
-        <TextView
-            android:id="@+id/addressUser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="20dp"
-            android:layout_toEndOf="@id/home_ic"
-            android:fontFamily="@font/iran_sans_fanum"
-            android:text="آدرس : 15 خرداد - کوچه 39 - شرکت سمین سرمایه پارس "
-            android:textColor="@color/text_main"
-            android:textSize="14dp" />
-
-
-    </RelativeLayout>
+                <TextView
+                    android:id="@+id/addressUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_toEndOf="@id/home_ic"
+                    android:fontFamily="@font/iran_sans_fanum"
+                    android:text="آدرس : 15 خرداد - کوچه 39 - شرکت سمین سرمایه پارس "
+                    android:textColor="@color/text_main"
+                    android:textSize="14dp" />
 
 
-    <LinearLayout
-        android:id="@+id/map"
-        android:layout_width="match_parent"
-        android:layout_height="113dp"
-        android:layout_below="@id/rv3"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/item_border_map">
+            </RelativeLayout>
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            android:src="@drawable/mapp" />
 
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/map"
+                android:layout_width="match_parent"
+                android:layout_height="113dp"
+                android:layout_below="@id/rv3"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/item_border_map">
 
-    <include
-        android:id="@+id/chat_in"
-        layout="@layout/box_chat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/map"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="25dp" />
-    </LinearLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/mapp" />
 
-</ScrollView>
+            </LinearLayout>
 
+            <include
+                android:id="@+id/chat_in"
+                layout="@layout/box_chat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/map"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="25dp" />
 
     <TextView
         android:id="@+id/tv_doing"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:layout_below="@id/scroll"
+        android:layout_below="@id/chat_in"
         android:layout_marginTop="25dp"
         android:background="@color/blue"
         android:fontFamily="@font/iran_sans"
@@ -233,7 +218,7 @@
         android:id="@+id/linear_done_cancel"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:layout_below="@id/scroll"
+        android:layout_below="@id/chat_in"
         android:layout_marginTop="26dp"
         android:layout_marginBottom="20dp"
         android:orientation="horizontal"
@@ -241,6 +226,7 @@
         android:visibility="gone">
 
         <TextView
+            android:id="@+id/done"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginEnd="10dp"
@@ -253,6 +239,7 @@
             android:textSize="16dp" />
 
         <TextView
+            android:id="@+id/cancel"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
