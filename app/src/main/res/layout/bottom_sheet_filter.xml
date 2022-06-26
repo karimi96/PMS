@@ -6,7 +6,7 @@
     <View
         android:id="@+id/line"
         android:layout_width="120dp"
-        android:background="@color/text_main"
+        android:background="@drawable/item_border_line_sheet"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:layout_height="3dp"/>

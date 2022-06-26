@@ -5,7 +5,7 @@
 
     <View
         android:id="@+id/line"
-        android:background="@color/text_main"
+        android:background="@drawable/item_border_line_sheet"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:layout_width="120dp"
@@ -63,17 +63,17 @@
 
     <TextView
         android:id="@+id/moon"
-        android:text="حالت شب"
-        android:fontFamily="@font/iran_sans"
-        android:textSize="16dp"
-        android:drawablePadding="10dp"
-        android:layout_below="@id/line1"
-        android:textColor="@color/text_main"
-        android:drawableRight="@drawable/moon_ic"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="20dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line1"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:drawableRight="@drawable/moon_ic"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/iran_sans"
+        android:text="حالت شب"
+        android:textColor="@color/text_main"
+        android:textSize="15dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -86,7 +86,7 @@
         android:fontFamily="@font/iran_sans"
         android:text="تنظیمات"
         android:textColor="@color/text_main"
-        android:textSize="16dp" />
+        android:textSize="15dp" />
 
     <Switch
         android:layout_below="@id/line1"
@@ -98,17 +98,17 @@
 
 
     <TextView
-        android:text="خروج از حساب کاربری"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:drawableStart="@drawable/exist_ic"
-        android:textColor="#E4897B"
-        android:textSize="16dp"
         android:layout_marginStart="20dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="20dp"
+        android:drawableStart="@drawable/exist_ic"
         android:drawablePadding="10dp"
         android:fontFamily="@font/iran_sans"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:text="خروج از حساب کاربری"
+        android:textColor="#E4897B"
+        android:textSize="15dp" />
 
 
 </RelativeLayout>
