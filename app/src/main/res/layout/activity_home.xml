@@ -9,14 +9,22 @@
   <include android:id="@+id/toolbar"
       layout="@layout/toolbar"/>
 
+  <androidx.core.widget.NestedScrollView
+      android:layout_below="@id/toolbar"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
         tools:listitem="@layout/list_item_home"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:clipToPadding="false"
         android:paddingTop="15dp"
-        android:layout_below="@id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
+  </androidx.core.widget.NestedScrollView>
+
 
 </RelativeLayout>
