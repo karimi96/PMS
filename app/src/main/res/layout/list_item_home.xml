@@ -23,6 +23,7 @@
             <TextView
                 android:id="@+id/title"
                 style="@style/CustomText"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
