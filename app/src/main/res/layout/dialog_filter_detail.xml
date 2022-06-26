@@ -14,7 +14,7 @@
     <RelativeLayout
         android:id="@+id/rv"
         android:layout_width="match_parent"
-        android:layout_height="64dp">
+        android:layout_height="?attr/actionBarSize">
 
         <TextView
             android:layout_width="wrap_content"
@@ -24,40 +24,54 @@
             android:fontFamily="@font/iran_sans"
             android:text="رفع خرابی"
             android:textColor="@color/blue"
-            android:textSize="18dp" />
+            android:textSize="16dp" />
 
         <ImageView
             android:id="@+id/close_detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="39dp"
+            android:layout_height="39dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="20dp"
+            android:background="@drawable/ripple_circle"
+            android:padding="5dp"
             android:src="@drawable/close_ic" />
 
 
         <TextView
             android:id="@+id/posModel_t"
-            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="20dp"
-            android:drawablePadding="10dp"
             android:drawableEnd="@drawable/pos_ic"
+            android:drawablePadding="10dp"
             android:fontFamily="@font/iran_sans"
             android:paddingTop="8dp"
             android:text="S800"
             android:textColor="@color/text_main"
-            android:textSize="16dp" />
+            android:textSize="14dp"
+            android:visibility="gone" />
 
 
     </RelativeLayout>
 
+<ScrollView
+    android:id="@+id/scroll"
+    android:layout_below="@id/rv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
 
     <RelativeLayout
         android:id="@+id/rv1"
+        android:layout_marginTop="3dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/line">
@@ -69,7 +83,6 @@
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="20dp"
-            android:paddingVertical="17dp"
             android:src="@drawable/user_gray_ic" />
 
         <TextView
@@ -82,36 +95,35 @@
             android:fontFamily="@font/iran_sans"
             android:text="مسعود الهی نیا"
             android:textColor="@color/text_main"
-            android:textSize="16dp" />
+            android:textSize="14dp" />
 
-<!--        <ImageView-->
-<!--            android:id="@+id/posIcon"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_alignParentEnd="true"-->
-<!--            android:layout_centerVertical="true"-->
-<!--            android:layout_marginEnd="20dp"-->
-<!--            android:src="@drawable/pos_ic" />-->
+        <ImageView
+            android:id="@+id/posIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/pos_ic" />
 
         <TextView
             android:id="@+id/posModel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="20dp"
-            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:gravity="bottom"
+            android:layout_marginTop="5dp"
+            android:layout_toStartOf="@id/posIcon"
             android:fontFamily="@font/iran_sans"
-            android:drawablePadding="10dp"
-            android:paddingVertical="10dp"
-            android:drawableEnd="@drawable/pos_ic"
             android:text="S800"
             android:textColor="@color/text_main"
-            android:textSize="16dp" />
+            android:textSize="15dp" />
 
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/rv2"
+        android:paddingBottom="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/rv1">
@@ -121,22 +133,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:layout_marginVertical="17dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
             android:src="@drawable/phone_call_ic" />
 
         <TextView
             android:id="@+id/phoneUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
+            android:layout_alignBottom="@id/phone"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
             android:layout_toEndOf="@id/phone"
             android:fontFamily="@font/iran_sans_fanum"
             android:text="09121537381"
             android:textColor="@color/text_main"
-            android:textSize="16dp" />
+            android:textSize="14dp" />
 
 
     </RelativeLayout>
@@ -146,11 +158,11 @@
         android:id="@+id/rv3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rv2"
-        android:paddingTop="17dp">
+        android:layout_below="@id/rv2">
 
         <ImageView
             android:id="@+id/home_ic"
+            android:layout_marginTop="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -162,12 +174,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="20dp"
             android:layout_toEndOf="@id/home_ic"
             android:fontFamily="@font/iran_sans_fanum"
             android:text="آدرس : 15 خرداد - کوچه 39 - شرکت سمین سرمایه پارس "
             android:textColor="@color/text_main"
-            android:textSize="16dp" />
+            android:textSize="14dp" />
 
 
     </RelativeLayout>
@@ -179,13 +192,13 @@
         android:layout_height="113dp"
         android:layout_below="@id/rv3"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/item_border_map">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"
+            android:scaleType="fitXY"
             android:src="@drawable/mapp" />
 
     </LinearLayout>
@@ -197,14 +210,18 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/map"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="35dp" />
+        android:layout_marginTop="25dp" />
+    </LinearLayout>
+
+</ScrollView>
+
 
     <TextView
         android:id="@+id/tv_doing"
         android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:layout_below="@id/chat_in"
-        android:layout_marginTop="30dp"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_below="@id/scroll"
+        android:layout_marginTop="25dp"
         android:background="@color/blue"
         android:fontFamily="@font/iran_sans"
         android:gravity="center"
@@ -213,38 +230,38 @@
         android:textSize="16dp" />
 
     <LinearLayout
-        android:visibility="gone"
         android:id="@+id/linear_done_cancel"
-        android:layout_below="@id/chat_in"
-        android:orientation="horizontal"
-        android:layout_marginTop="36dp"
-        android:layout_marginBottom="20dp"
-        android:paddingHorizontal="20dp"
         android:layout_width="match_parent"
-        android:layout_height="54dp">
+        android:layout_height="?attr/actionBarSize"
+        android:layout_below="@id/scroll"
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        android:visibility="gone">
 
         <TextView
-            android:textSize="16dp"
-            android:text="انجام شد"
-            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_marginEnd="10dp"
+            android:layout_weight="1"
             android:background="@drawable/item_border_btn_done"
-            android:textColor="@color/white"
             android:fontFamily="@font/iran_sans"
-            android:gravity="center"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"/>
+            android:gravity="center_vertical|center_horizontal"
+            android:text="انجام شد"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
 
         <TextView
-            android:textSize="16dp"
-            android:text="انصراف"
-            android:gravity="center"
-            android:background="@drawable/item_border_btn_cancel"
-            android:textColor="@color/blue"
-            android:fontFamily="@font/iran_sans"
-            android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/item_border_btn_cancel"
+            android:fontFamily="@font/iran_sans"
+            android:gravity="center"
+            android:text="انصراف"
+            android:textColor="@color/blue"
+            android:textSize="16dp" />
 
     </LinearLayout>
 
