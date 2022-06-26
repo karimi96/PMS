@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <include
+        android:id="@+id/rc"
+        layout="@layout/box_record_activity" />
+
+    <EditText
+        android:id="@+id/transaction_code_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rc"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="35dp"
+        android:backgroundTint="@color/text_hint"
+        android:fontFamily="@font/iran_sans"
+        android:hint="کد تراکنش"
+        android:textColor="@color/text_main"
+        android:textColorHint="@color/text_hint"
+        android:textSize="16dp" />
+
+    <include
+        android:id="@+id/ex"
+        layout="@layout/box_explain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/transaction_code_dialog" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:layout_below="@id/ex"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/item_btn_background"
+        android:fontFamily="@font/iran_sans"
+        android:gravity="center"
+        android:text="ارسال"
+        android:textColor="@color/white"
+        android:textSize="16dp" />
+
+
+</RelativeLayout>

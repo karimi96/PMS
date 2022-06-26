@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_gravity="top"
+            android:src="@drawable/ellipse_pic"
+            android:layout_width="24dp"
+            android:layout_height="24dp"/>
+
+
+        <ImageView
+            android:background="@drawable/item_border_chat_corner"
+            android:layout_gravity="top"
+            android:rotation="180"
+            android:layout_width="12dp"
+            android:layout_height="12dp"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@drawable/item_border_chat_rounded"
+            android:layout_width="match_parent"
+            android:paddingVertical="8dp"
+            android:paddingStart="12dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="خانم موسوی"
+                android:textSize="14dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/text_main"
+                android:fontFamily="@font/iran_sans"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="آقای الهی نیا تا ساعت 2 منتظرتونن."
+                android:textSize="14dp"
+                android:textColor="@color/text_main"
+                android:fontFamily="@font/iran_sans"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:text="نمایش بیشتر"
+        android:layout_gravity="end"
+        android:fontFamily="@font/iran_sans"
+        android:textColor="@color/pink"
+        android:textSize="12dp"
+        android:layout_marginTop="4dp"
+        android:drawableEnd="@drawable/more_ic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
+
+
+</LinearLayout>
