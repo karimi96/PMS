@@ -21,7 +21,7 @@
         android:id="@+id/sign_up_back"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="26dp"
         android:layout_marginEnd="28dp"
         android:background="?attr/actionBarItemBackground"
         android:padding="6dp"
@@ -109,27 +109,27 @@
 
     <View
         android:layout_width="36dp"
-        android:layout_height="5dp"
+        android:layout_height="6dp"
         android:layout_marginEnd="4.3dp"
-        android:layout_marginBottom="7.1dp"
+        android:layout_marginBottom="5dp"
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="@id/textField"
         app:layout_constraintStart_toStartOf="@id/textField" />
 
     <View
         android:layout_width="36dp"
-        android:layout_height="5dp"
+        android:layout_height="6dp"
         android:layout_marginEnd="4.3dp"
-        android:layout_marginBottom="7.1dp"
+        android:layout_marginBottom="5dp"
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="@id/textField1"
         app:layout_constraintStart_toStartOf="@id/textField1" />
 
     <View
         android:layout_width="36dp"
-        android:layout_height="5dp"
+        android:layout_height="6dp"
         android:layout_marginEnd="4.3dp"
-        android:layout_marginBottom="7.1dp"
+        android:layout_marginBottom="5.5dp"
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="@id/textField2"
         app:layout_constraintStart_toStartOf="@id/textField2" />
@@ -139,7 +139,7 @@
         android:id="@+id/nextEmail"
         style="@style/CustomText"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="58dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginHorizontal="35dp"
