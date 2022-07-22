@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.login_email.view.*
 import kotlinx.android.synthetic.main.login_pass.*
 import kotlinx.android.synthetic.main.login_pass.view.*
+import kotlinx.android.synthetic.main.sign_up.*
 import kotlinx.android.synthetic.main.vertification.view.*
 
 class LoginActivity : AppCompatActivity() {
@@ -22,8 +23,8 @@ class LoginActivity : AppCompatActivity() {
         in_email.nextEmail.setOnClickListener { in_email.visibility = View.GONE
         in_pass.visibility = View.VISIBLE}
 
-        in_email.tv_join.setOnClickListener {in_email.visibility = View.GONE
-        in_vertification.visibility = View.VISIBLE}
+//        in_email.tv_join.setOnClickListener {in_email.visibility = View.GONE
+//        in_vertification.visibility = View.VISIBLE}
 
         in_vertification.nextVertification.setOnClickListener {  in_vertification.visibility = View.GONE
         in_signUp.visibility = View.VISIBLE}
@@ -33,6 +34,9 @@ class LoginActivity : AppCompatActivity() {
 
         in_vertification.nextVertification.setOnClickListener { in_vertification.visibility = View.GONE
         in_forgetPass.visibility = View.VISIBLE }
+
+
+        sign_up_back.setOnClickListener { toast("hello") }
 
         countDownTimer()
 

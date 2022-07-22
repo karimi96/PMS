@@ -39,12 +39,12 @@
         tools:ignore="MissingConstraints">
 
         <com.google.android.material.textfield.TextInputEditText
-           style="@style/CustomTextInputEditText"
+            style="@style/CustomTextInputEditText"
             android:drawableStart="@drawable/lock_ic"
             android:fontFamily="@font/iran_sans_fanum"
-            android:paddingVertical="10dp"
             android:imeOptions="actionDone"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:paddingVertical="10dp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -59,8 +59,8 @@
 
         <com.google.android.material.textfield.TextInputEditText
             style="@style/CustomTextInputEditText"
-            android:fontFamily="@font/iran_sans_fanum"
             android:drawableStart="@drawable/lock_ic"
+            android:fontFamily="@font/iran_sans_fanum"
             android:imeOptions="actionNext"
             android:inputType="textPassword"
             android:paddingVertical="10dp" />
@@ -77,9 +77,9 @@
 
         <com.google.android.material.textfield.TextInputEditText
             style="@style/CustomTextInputEditText"
+            android:drawableStart="@drawable/user_ic"
             android:fontFamily="@font/iran_sans"
             android:imeOptions="actionNext"
-            android:drawableStart="@drawable/user_ic"
             android:inputType="text"
             android:paddingTop="15dp" />
 

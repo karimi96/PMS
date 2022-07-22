@@ -32,7 +32,7 @@
         android:textSize="13dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline" />
-    
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textField"
@@ -41,9 +41,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="31dp"
         android:layout_marginEnd="35dp"
-        app:hintTextAppearance="@style/CustomHintSize"
         android:hint="تلفن همراه"
         android:textColorHint="@color/text_hint"
+        app:hintTextAppearance="@style/CustomHintSize"
         app:layout_constraintBottom_toTopOf="@+id/nextEmail"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         tools:ignore="MissingConstraints">
@@ -53,9 +53,9 @@
             android:drawableStart="@drawable/phone_ic"
             android:fontFamily="@font/iran_sans_fanum"
             android:imeOptions="actionDone"
-            android:paddingTop="15dp"
             android:inputType="phone"
-            android:paddingVertical="10dp" />
+            android:paddingVertical="10dp"
+            android:paddingTop="15dp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -96,7 +96,7 @@
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline9"
-       style="@style/CustomGuideline"
+        style="@style/CustomGuideline"
         app:layout_constraintGuide_percent="0.07" />
 
     <androidx.constraintlayout.widget.Guideline
