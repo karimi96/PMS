@@ -31,7 +31,7 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textField"
+        android:id="@+id/textField_phone"
         style="@style/CustomTextInputLayout"
         android:hint="رمز عبور"
         app:endIconMode="password_toggle"
@@ -52,8 +52,8 @@
     <View
         android:id="@+id/view"
         style="@style/CustomView"
-        app:layout_constraintBottom_toBottomOf="@id/textField"
-        app:layout_constraintStart_toStartOf="@id/textField" />
+        app:layout_constraintBottom_toBottomOf="@id/textField_phone"
+        app:layout_constraintStart_toStartOf="@id/textField_phone" />
 
 
     <TextView
