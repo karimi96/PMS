@@ -12,11 +12,12 @@
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:padding="15dp"
         android:src="@drawable/pic_login_email"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/guideline9" />
 
 
     <TextView
@@ -25,10 +26,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:text="لطفا شماره همراه خود را وارد نمایید."
         android:textColor="@color/text_main"
-        android:textSize="15dp"
+        android:textSize="13dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline" />
 
@@ -51,6 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="31dp"
         android:layout_marginEnd="35dp"
+        app:hintTextAppearance="@style/CustomHintSize"
         android:hint="تلفن همراه"
         android:textColorHint="@color/text_hint"
         app:layout_constraintBottom_toTopOf="@+id/nextEmail"
@@ -58,28 +60,19 @@
         tools:ignore="MissingConstraints">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/text_hint"
+            style="@style/CustomTextInputEditText"
             android:drawableStart="@drawable/phone_ic"
-            android:drawablePadding="10dp"
             android:fontFamily="@font/iran_sans_fanum"
             android:imeOptions="actionDone"
+            android:paddingTop="15dp"
             android:inputType="phone"
-            android:paddingVertical="10dp"
-            android:textColor="@color/text_main"
-            android:textColorHint="@color/text_hint"
-            android:textSize="16dp" />
+            android:paddingVertical="10dp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
 
     <View
-        android:layout_width="36dp"
-        android:layout_height="5dp"
-        android:layout_marginEnd="4.3dp"
-        android:layout_marginBottom="7.1dp"
-        android:background="@color/white"
+        style="@style/CustomView"
         app:layout_constraintBottom_toBottomOf="@id/textField"
         app:layout_constraintStart_toStartOf="@id/textField" />
 
@@ -88,33 +81,19 @@
         android:id="@+id/nextEmail"
         style="@style/CustomText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="58dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginHorizontal="35dp"
         android:background="@drawable/item_btn_background"
         android:gravity="center"
-        android:paddingVertical="15dp"
         android:text="ادامه"
-        android:textSize="16dp"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guideline"
-        app:layout_constraintVertical_bias="0.6"
-        tools:layout_editor_absoluteX="35dp" />
-
-
-    <TextView
-        android:id="@+id/tv_join"
-        android:fontFamily="@font/iran_sans"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:text="عضویت"
         android:textSize="16dp"
-        android:textColor="@color/text_main"
-        android:layout_margin="15dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+
+        app:layout_constraintBottom_toTopOf="@+id/guideline11"
+        app:layout_constraintTop_toTopOf="@+id/guideline11"
+        tools:layout_editor_absoluteX="35dp" />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -122,13 +101,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.45" />
+        app:layout_constraintGuide_percent="0.43" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.57" />
+        app:layout_constraintGuide_percent="0.5718194" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.07" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7305062" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
