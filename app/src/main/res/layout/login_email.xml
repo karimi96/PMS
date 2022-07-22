@@ -32,18 +32,7 @@
         android:textSize="13dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline" />
-
-    <!--    <ImageView-->
-    <!--        android:id="@+id/imageView3"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginStart="35dp"-->
-    <!--        android:src="@drawable/phone_ic"-->
-    <!--        app:layout_constraintBottom_toTopOf="@+id/textView"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@+id/imageView2"-->
-    <!--        app:layout_constraintVertical_bias="0.55" />-->
-
+    
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textField"
@@ -90,7 +79,6 @@
         android:text="ادامه"
         android:textColor="@color/white"
         android:textSize="16dp"
-
         app:layout_constraintBottom_toTopOf="@+id/guideline11"
         app:layout_constraintTop_toTopOf="@+id/guideline11"
         tools:layout_editor_absoluteX="35dp" />
@@ -98,30 +86,22 @@
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        style="@style/CustomGuideline"
         app:layout_constraintGuide_percent="0.43" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        style="@style/CustomGuideline"
         app:layout_constraintGuide_percent="0.5718194" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+       style="@style/CustomGuideline"
         app:layout_constraintGuide_percent="0.07" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        style="@style/CustomGuideline"
         app:layout_constraintGuide_percent="0.7305062" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
