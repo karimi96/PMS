@@ -31,12 +31,9 @@
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
 
         <!-- Customize your theme here. -->
-
-
         <item name="android:layoutDirection">rtl</item>
         <item name="android:direction">right_to_left</item>
     </style>
-
 
 
     <style name="CustomText">
@@ -58,6 +55,7 @@
         <item name="android:inputType">number</item>
     </style>
 
+
     <style name="CustomTextInputType" parent="Widget.Design.TextInputLayout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -66,9 +64,11 @@
         <item name="endIconTint">@color/text_hint</item>
         <item name="startIconTint">@color/text_hint</item>
         <item name="android:textColorHint">@color/text_hint</item>
-
-
     </style>
 
+
+    <style name="CustomHintSize" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">11dp</item>
+    </style>
 
 </resources>

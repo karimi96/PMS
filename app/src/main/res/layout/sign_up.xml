@@ -35,6 +35,7 @@
         style="@style/CustomTextInputType"
         android:hint="تکرار رمز عبور"
         app:endIconMode="password_toggle"
+        app:hintTextAppearance="@style/CustomHintSize"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         tools:ignore="MissingConstraints">
 
@@ -60,6 +61,7 @@
         style="@style/CustomTextInputType"
         android:hint="رمز عبور"
         app:endIconMode="password_toggle"
+        app:hintTextAppearance="@style/CustomHintSize"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         tools:ignore="MissingConstraints">
 
@@ -73,6 +75,7 @@
             android:imeOptions="actionDone"
             android:inputType="textPassword"
             android:paddingVertical="10dp"
+            android:textAppearance="@style/CustomHintSize"
             android:textColor="@color/text_main"
             android:textColorHint="@color/text_hint"
             android:textSize="14dp" />
@@ -84,6 +87,7 @@
         android:id="@+id/textField2"
         style="@style/CustomTextInputType"
         android:hint="نام و نام خانوادگی"
+        app:hintTextAppearance="@style/CustomHintSize"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         tools:ignore="MissingConstraints">
 
@@ -96,7 +100,8 @@
             android:fontFamily="@font/iran_sans"
             android:imeOptions="actionDone"
             android:inputType="text"
-            android:paddingVertical="10dp"
+            android:paddingTop="15dp"
+            android:textAppearance="@style/CustomHintSize"
             android:textColor="@color/text_main"
             android:textSize="14dp" />
 
