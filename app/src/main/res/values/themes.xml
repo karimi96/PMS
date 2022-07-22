@@ -56,7 +56,7 @@
     </style>
 
 
-    <style name="CustomTextInputType" parent="Widget.Design.TextInputLayout">
+    <style name="CustomTextInputLayout" parent="Widget.Design.TextInputLayout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginStart">30dp</item>
@@ -64,6 +64,34 @@
         <item name="endIconTint">@color/text_hint</item>
         <item name="startIconTint">@color/text_hint</item>
         <item name="android:textColorHint">@color/text_hint</item>
+        <item name="hintTextAppearance">@style/CustomHintSize</item>
+    </style>
+
+
+    <style name="CustomTextInputEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:backgroundTint">@color/text_hint</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:textColor">@color/text_main</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+
+    <style name="CustomGuideline">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+
+    <style name="CustomView">
+        <item name="android:layout_width">36dp</item>
+        <item name="android:layout_height">6dp</item>
+        <item name="android:layout_marginEnd">4.3dp</item>
+        <item name="android:layout_marginBottom">5.5dp</item>
+        <item name="android:background">@color/white</item>
     </style>
 
 
