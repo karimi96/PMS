@@ -7,33 +7,38 @@
 
     <ImageView
         android:id="@+id/setting_slider"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="?attr/actionBarItemBackground"
+        android:padding="8dp"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="9dp"
         android:src="@drawable/setting_ic" />
 
     <ImageView
         android:id="@+id/filtering"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:padding="8dp"
+        android:background="?attr/actionBarItemBackground"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
         android:src="@drawable/filter_ic" />
+    
 
-        <TextView
-            android:text="PM"
-            android:fontFamily="@font/inter"
-            android:textColor="@color/white"
-            android:textSize="28dp"
-            android:textStyle="bold"
-            android:drawablePadding="2dp"
-            android:drawableStart="@drawable/s_ic"
-            android:layout_centerInParent="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:drawableStart="@drawable/s_ic"
+        android:drawablePadding="2dp"
+        android:fontFamily="@font/inter"
+        android:text="PM"
+        android:textColor="@color/white"
+        android:textSize="28dp"
+        android:textStyle="bold" />
 
 </RelativeLayout>
 
