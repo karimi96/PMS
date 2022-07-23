@@ -1,5 +1,6 @@
 package com.karimi.pms.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.Gravity
@@ -28,10 +29,10 @@ class LoginActivity : AppCompatActivity() {
 
         lunchPhonePage()
         lunchPasswordPage()
+        lunchHomeActivity()
         lunchValidation()
         lunchForgetPass()
         countDownTimer()
-//        in_pass.nextPass.setOnClickListener { startActivity(Intent(this,HomeActivity ::class.java)) }
     }
 
 
@@ -45,6 +46,7 @@ class LoginActivity : AppCompatActivity() {
         tv_nextPhone.startAnimation(slideAnimation)
     }
 
+
     private fun lunchPasswordPage() {
         tv_nextPhone.setOnClickListener {
             var transition: Transition
@@ -52,35 +54,24 @@ class LoginActivity : AppCompatActivity() {
                 transition = Slide(Gravity.END)
                 transition.duration = 2000
                 TransitionManager.beginDelayedTransition(relative, transition)
-                arrayOf(tv_enterYourPhone, img_phone, et_phone, tv_nextPhone).forEach { it.visibility = View.GONE}
+                arrayOf(
+                    tv_enterYourPhone,
+                    img_phone,
+                    et_phone,
+                    tv_nextPhone
+                ).forEach { it.visibility = View.GONE }
             }
             if (img_phone.isGone) {
-            transition = Fade()
-            transition.duration = 2000
-            TransitionManager.beginDelayedTransition(relative,transition)
-            in_pass.visibility = View.VISIBLE
-        }
-//
-//        if(tv_enterYourPhone.isGone && et_phone.isGone && tv_nextPhone.isGone){
-//            transition = Slide(Gravity.RIGHT)
-//            transition.duration = 2000
-//            TransitionManager.beginDelayedTransition(relative,transition)
-//            tv_enterYourPhone.visibility = View.VISIBLE
-//            et_phone.visibility = View.VISIBLE
-//            tv_nextPhone.visibility = View.VISIBLE
-//        }else {
-//            transition = Fade()
-//            transition.duration = 2000
-//            TransitionManager.beginDelayedTransition(relative,transition)
-//            tv_enterYourPhone.visibility = View.GONE
-//            et_phone.visibility = View.GONE
-//            tv_nextPhone.visibility = View.GONE
-//        }
+                transition = Fade()
+                transition.duration = 2000
+                TransitionManager.beginDelayedTransition(relative, transition)
+                in_pass.visibility = View.VISIBLE
+            }
         }
     }
 
 
-    private fun lunchValidation(){
+    private fun lunchValidation() {
         tv_forgetPass.setOnClickListener {
             var transition: Transition
             if (img_loginPass.isVisible) {
@@ -90,7 +81,7 @@ class LoginActivity : AppCompatActivity() {
                 in_pass.visibility = View.GONE
             }
             var transition2: Transition
-            if (in_pass.isGone){
+            if (in_pass.isGone) {
                 transition2 = Slide(Gravity.BOTTOM)
                 transition2.duration = 2000
                 TransitionManager.beginDelayedTransition(relative, transition2)
@@ -100,7 +91,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
 
-    private fun lunchForgetPass(){
+    private fun lunchForgetPass() {
         tv_nextVerification.setOnClickListener {
             if (img_verification.isVisible) {
                 var transition: Transition
@@ -126,14 +117,27 @@ class LoginActivity : AppCompatActivity() {
                 transition = Slide(Gravity.TOP)
                 transition.duration = 2000
                 TransitionManager.beginDelayedTransition(relative, transition)
-                arrayOf(in_forgetPass, img_forget_pass, et_newPass , et_repetition_newPass, tv_nextForgetPass).forEach { it.visibility = View.VISIBLE }
+                arrayOf(
+                    in_forgetPass,
+                    img_forget_pass,
+                    et_newPass,
+                    et_repetition_newPass,
+                    tv_nextForgetPass
+                ).forEach { it.visibility = View.VISIBLE }
             }
         }
     }
 
 
-    private fun lunchHomeActivity(){
-
+    private fun lunchHomeActivity() {
+        tv_nextPass.setOnClickListener {
+            startActivity(
+                Intent(
+                    baseContext,
+                    HomeActivity::class.java
+                )
+            )
+        }
     }
 
 
@@ -156,4 +160,5 @@ class LoginActivity : AppCompatActivity() {
     private fun toast(text: String) {
         Toast.makeText(applicationContext, text, Toast.LENGTH_SHORT).show()
     }
+
 }
