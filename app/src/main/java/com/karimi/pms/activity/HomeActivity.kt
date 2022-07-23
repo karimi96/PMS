@@ -65,9 +65,9 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener {
 
     private fun initSitting() {
         setting_slider.setOnClickListener {
-            val dialog = BottomSheetDialog(this)
+            val dialog = BottomSheetDialog(this, R.style.BottomSheetDialogTheme)
+//            val view = layoutInflater.inflate(R.layout.bottom_sheet_setting, null)
             dialog.setContentView(R.layout.bottom_sheet_setting)
-//            dialog.window?.setBackgroundDrawableResource(R.drawable.item_border_bottom_sheet)
             dialog.show()
         }
     }
@@ -162,3 +162,6 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener {
     }
 
 }
+
+
+

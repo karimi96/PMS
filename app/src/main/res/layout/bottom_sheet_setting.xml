@@ -5,19 +5,19 @@
 
     <View
         android:id="@+id/line"
-        android:background="@drawable/item_border_line_sheet"
+        android:layout_width="120dp"
+        android:layout_height="3dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:layout_width="120dp"
-        android:layout_height="3dp"/>
+        android:background="@drawable/item_border_line_sheet" />
 
     <View
         android:id="@+id/line1"
-        android:background="@color/border_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="120dp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
+        android:background="@color/border_line" />
 
     <LinearLayout
         android:layout_width="match_parent"
