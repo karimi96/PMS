@@ -15,8 +15,10 @@ import androidx.transition.Transition
 import androidx.transition.TransitionManager
 import com.karimi.pms.R
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.forget_pass.*
 import kotlinx.android.synthetic.main.login_email.*
-import kotlinx.android.synthetic.main.vertification.view.*
+import kotlinx.android.synthetic.main.login_pass.*
+import kotlinx.android.synthetic.main.verification.*
 
 class LoginActivity : AppCompatActivity() {
 
@@ -26,9 +28,9 @@ class LoginActivity : AppCompatActivity() {
 
         lunchPhonePage()
         lunchPasswordPage()
+        lunchValidation()
+        lunchForgetPass()
         countDownTimer()
-
-
 //        in_pass.nextPass.setOnClickListener { startActivity(Intent(this,HomeActivity ::class.java)) }
     }
 
@@ -50,17 +52,14 @@ class LoginActivity : AppCompatActivity() {
                 transition = Slide(Gravity.END)
                 transition.duration = 2000
                 TransitionManager.beginDelayedTransition(relative, transition)
-                tv_enterYourPhone.visibility = View.GONE
-                img_phone.visibility = View.GONE
-                et_phone.visibility = View.GONE
-                tv_nextPhone.visibility = View.GONE
+                arrayOf(tv_enterYourPhone, img_phone, et_phone, tv_nextPhone).forEach { it.visibility = View.GONE}
             }
-//        else{
-//            transition = Fade()
-//            transition.duration = 2000
-//            TransitionManager.beginDelayedTransition(relative,transition)
-//            img_phone.visibility = View.GONE
-//        }
+            if (img_phone.isGone) {
+            transition = Fade()
+            transition.duration = 2000
+            TransitionManager.beginDelayedTransition(relative,transition)
+            in_pass.visibility = View.VISIBLE
+        }
 //
 //        if(tv_enterYourPhone.isGone && et_phone.isGone && tv_nextPhone.isGone){
 //            transition = Slide(Gravity.RIGHT)
@@ -81,12 +80,69 @@ class LoginActivity : AppCompatActivity() {
     }
 
 
+    private fun lunchValidation(){
+        tv_forgetPass.setOnClickListener {
+            var transition: Transition
+            if (img_loginPass.isVisible) {
+                transition = Slide(Gravity.BOTTOM)
+                transition.duration = 2000
+                TransitionManager.beginDelayedTransition(relative, transition)
+                in_pass.visibility = View.GONE
+            }
+            var transition2: Transition
+            if (in_pass.isGone){
+                transition2 = Slide(Gravity.BOTTOM)
+                transition2.duration = 2000
+                TransitionManager.beginDelayedTransition(relative, transition2)
+                in_verification.visibility = View.VISIBLE
+            }
+        }
+    }
+
+
+    private fun lunchForgetPass(){
+        tv_nextVerification.setOnClickListener {
+            if (img_verification.isVisible) {
+                var transition: Transition
+                transition = Slide(Gravity.TOP)
+                transition.duration = 2000
+                TransitionManager.beginDelayedTransition(relative, transition)
+                img_verification.visibility = View.GONE
+            }
+            if (tv_interYourCode.isVisible) {
+                var transition1: Transition
+                transition1 = Slide(Gravity.TOP)
+                transition1.duration = 2000
+                TransitionManager.beginDelayedTransition(relative, transition1)
+                tv_interYourCode.visibility = View.GONE
+                linear_verification.visibility = View.GONE
+                timer.visibility = View.GONE
+                tv_nextVerification.visibility = View.GONE
+                in_verification.visibility = View.GONE
+            }
+
+            if (img_verification.isGone) {
+                var transition: Transition
+                transition = Slide(Gravity.TOP)
+                transition.duration = 2000
+                TransitionManager.beginDelayedTransition(relative, transition)
+                arrayOf(in_forgetPass, img_forget_pass, et_newPass , et_repetition_newPass, tv_nextForgetPass).forEach { it.visibility = View.VISIBLE }
+            }
+        }
+    }
+
+
+    private fun lunchHomeActivity(){
+
+    }
+
+
     private fun countDownTimer() {
         val timer = object : CountDownTimer(120000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 val minutes = (millisUntilFinished / 1000) / 60
                 val seconds = (millisUntilFinished / 1000) % 60
-                in_vertification.timer.text = String.format("%02d:%02d", minutes, seconds);
+                timer.text = String.format("%02d:%02d", minutes, seconds);
             }
 
             override fun onFinish() {

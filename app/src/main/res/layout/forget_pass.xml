@@ -8,7 +8,7 @@
     android:focusableInTouchMode="true">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/img_forget_pass"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:src="@drawable/pic_forget_pass"
@@ -27,6 +27,7 @@
         tools:ignore="MissingConstraints">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_repetition_newPass"
             style="@style/CustomTextInputEditText"
             android:drawableStart="@drawable/lock_ic"
             android:fontFamily="@font/iran_sans_fanum"
@@ -47,6 +48,7 @@
         tools:ignore="MissingConstraints">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_newPass"
             style="@style/CustomTextInputEditText"
             android:drawableStart="@drawable/lock_ic"
             android:fontFamily="@font/iran_sans_fanum"
@@ -69,7 +71,7 @@
 
 
     <TextView
-        android:id="@+id/nextEmail"
+        android:id="@+id/tv_nextForgetPass"
         style="@style/CustomText"
         android:layout_width="match_parent"
         android:layout_height="58dp"
