@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="400dp">
+    android:layout_height="400dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <View
         android:id="@+id/line"
         android:layout_width="120dp"
         android:layout_height="3dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/item_border_line_sheet" />
+        android:layout_marginTop="15dp"/>
 
     <View
         android:id="@+id/line1"
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:backgroundTint="@color/blue_night"
+        android:background="@null"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="120dp"
-        android:background="@color/border_line" />
+        android:layout_marginTop="120dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,7 +33,8 @@
             android:layout_width="77dp"
             android:layout_height="77dp"
             android:layout_marginStart="20dp"
-            android:src="@drawable/picture_user" />
+            android:src="@drawable/picture_user"
+            app:tint="@null" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -47,7 +49,7 @@
                 android:fontFamily="@font/iran_sans"
                 android:gravity="right"
                 android:text="رقیه کریمی"
-                android:textColor="@color/text_main"
+                android:textColor="?android:textColorPrimary"
                 android:textSize="14dp" />
 
             <TextView
@@ -57,7 +59,7 @@
                 android:fontFamily="@font/iran_sans_fanum"
                 android:gravity="right"
                 android:text="09334659477"
-                android:textColor="@color/text_secondary"
+                android:textColor="?android:attr/textColor"
                 android:textSize="12dp" />
 
         </LinearLayout>
@@ -75,7 +77,7 @@
         android:drawablePadding="10dp"
         android:fontFamily="@font/iran_sans"
         android:text="حالت شب"
-        android:textColor="@color/text_main"
+        android:textColor="?android:attr/textColor"
         android:textSize="14dp" />
 
     <TextView
@@ -89,7 +91,7 @@
         android:drawablePadding="10dp"
         android:fontFamily="@font/iran_sans"
         android:text="تنظیمات"
-        android:textColor="@color/text_main"
+        android:textColor="?android:attr/textColor"
         android:textSize="14dp" />
 
     <Switch

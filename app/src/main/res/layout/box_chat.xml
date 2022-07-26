@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_margin="20dp"
@@ -14,20 +15,24 @@
             android:layout_gravity="top"
             android:src="@drawable/ellipse_pic"
             android:layout_width="30dp"
-            android:layout_height="30dp"/>
+            android:layout_height="30dp"
+            app:tint="@null" />
 
 
         <ImageView
             android:background="@drawable/item_border_chat_corner"
             android:layout_gravity="top"
             android:rotation="180"
+            android:backgroundTint="@null"
             android:layout_width="12dp"
-            android:layout_height="12dp"/>
+            android:layout_height="12dp"
+             />
 
         <RelativeLayout
             android:orientation="vertical"
             android:background="@drawable/item_border_chat_rounded"
             android:layout_width="match_parent"
+            android:backgroundTint="@null"
             android:paddingVertical="8dp"
             android:paddingHorizontal="12dp"
             android:layout_height="wrap_content">
@@ -36,35 +41,36 @@
                 android:id="@+id/title_chat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="خانم موسوی"
-                android:textSize="14dp"
-                android:paddingBottom="10dp"
-                android:textColor="@color/text_main"
+                android:backgroundTint="?android:solidColor"
                 android:fontFamily="@font/iran_sans"
-                />
+                android:paddingBottom="10dp"
+                android:text="خانم موسوی"
+                android:textColor="?android:textColorPrimary"
+                android:textSize="14dp" />
 
             <TextView
                 android:id="@+id/passage_short"
-                android:layout_below="@id/title_chat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="آقای الهی نیا تا ساعت 2 منتظرتونن. لطفا تا ساعت 2 در شرکت حاضر باشید ."
-                android:textSize="14dp"
-                android:singleLine="true"
+                android:layout_below="@id/title_chat"
+                android:backgroundTint="?android:solidColor"
                 android:ellipsize="end"
-                android:textColor="@color/text_main"
                 android:fontFamily="@font/iran_sans"
-                />
+                android:singleLine="true"
+                android:text="آقای الهی نیا تا ساعت 2 منتظرتونن. لطفا تا ساعت 2 در شرکت حاضر باشید ."
+                android:textColor="?android:textColorSecondary"
+                android:textSize="14dp" />
 
             <TextView
                 android:id="@+id/passage_long"
                 android:visibility="gone"
                 android:layout_below="@id/title_chat"
                 android:layout_width="match_parent"
+                android:backgroundTint="?android:solidColor"
                 android:layout_height="wrap_content"
                 android:text="آقای الهی نیا تا ساعت 2 منتظرتونن. لطفا تا ساعت 2 در شرکت حاضر باشید ."
                 android:textSize="14dp"
-                android:textColor="@color/text_main"
+                android:textColor="?android:textColorSecondary"
                 android:fontFamily="@font/iran_sans"
                 />
         </RelativeLayout>

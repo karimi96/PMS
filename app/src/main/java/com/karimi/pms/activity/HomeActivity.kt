@@ -1,24 +1,31 @@
 package com.karimi.pms.activity
 
+import android.annotation.SuppressLint
 import android.app.Dialog
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.karimi.pms.R
 import com.karimi.pms.adapter.RequestAdapter
 import com.karimi.pms.modal.Request
+import com.karimi.pms.widget.BottomSheetSettingWidget
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.bottom_sheet_setting.*
 import kotlinx.android.synthetic.main.box_chat.*
 import kotlinx.android.synthetic.main.box_reason_c.*
 import kotlinx.android.synthetic.main.dialog_filter_detail.*
 import kotlinx.android.synthetic.main.dialog_reason_cansel.*
 import kotlinx.android.synthetic.main.toolbar.*
+import java.util.jar.Manifest
 
-class HomeActivity : AppCompatActivity(), RequestAdapter.Listener {
+class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
     var listRequest: ArrayList<Request> = ArrayList()
     private lateinit var adapter: RequestAdapter
 
@@ -26,6 +33,7 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
 
         initRecycler()
         initSitting()
@@ -63,11 +71,26 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener {
     }
 
 
+
+    @SuppressLint("ResourceAsColor")
     private fun initSitting() {
         setting_slider.setOnClickListener {
             val dialog = BottomSheetDialog(this, R.style.BottomSheetDialogTheme)
 //            val view = layoutInflater.inflate(R.layout.bottom_sheet_setting, null)
             dialog.setContentView(R.layout.bottom_sheet_setting)
+            dialog.nameSetting.setTextColor(R.color.white)
+            dialog.window?.setBackgroundDrawable(null)
+            dialog.switch_nightMode.setOnCheckedChangeListener { compoundButton, b ->
+                if (dialog.switch_nightMode.isChecked){
+                     toast("on")
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                }else {
+                    toast("off")
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                }
+            }
+//            saveNightModeToPreferences(newNightMode);
+//            recreate();
             dialog.show()
         }
     }

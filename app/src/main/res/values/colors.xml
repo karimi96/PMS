@@ -9,7 +9,8 @@
     <color name="white">#FFFFFFFF</color>
 
 
-    <color name="blue">#026AA7</color>
+    <color name="blue_light">#026AA7</color>
+    <color name="blue_night">#027BC0</color>
     <color name="pink">#E4897B</color>
     <color name="gray_back">#F4F5F7</color>
     <color name="text_main">#4D5266</color>

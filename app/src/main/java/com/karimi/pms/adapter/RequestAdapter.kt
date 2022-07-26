@@ -54,18 +54,18 @@ class RequestAdapter(list: ArrayList<Request>, context: Context, listener: Liste
                 holder.date,
                 holder.dayName
             ).forEach { it.setTextColor(Color.parseColor("#E4897B")) }
-            holder.circle.background = context.getDrawable(R.drawable.circle_red)
+            holder.circle.setImageDrawable(context.getDrawable(R.drawable.circle_red))
             holder.place.setImageDrawable(context.getDrawable(R.drawable.place_red_ic))
             holder.cardView.foreground = context.getDrawable(R.drawable.item_border_red)
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
                 holder.cardView.outlineSpotShadowColor = Color.parseColor("#E4897B")
             }
         } else if (request.dayName == "امروز") {
-            holder.circle.background = context.getDrawable(R.drawable.circle_blue)
+            holder.circle.setImageDrawable(context.getDrawable(R.drawable.circle_blue))
             arrayOf(
                 holder.date,
                 holder.dayName
-            ).forEach { it.setTextColor(context.getColor(R.color.blue)) }
+            ).forEach { it.setTextColor(context.getColor(R.color.blue_light)) }
             holder.place.setImageDrawable(context.getDrawable(R.drawable.place_blue_ic))
         }
 

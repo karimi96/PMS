@@ -2,8 +2,9 @@
     <!-- Base application theme. -->
     <style name="Theme.PMS" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/blue</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/blue_light</item>
+        <!-- for btn blue -->
+        <item name="colorPrimaryVariant">@color/blue_light</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/text_main</item>
@@ -14,6 +15,31 @@
         <!-- Customize your theme here. -->
         <item name="android:layoutDirection">rtl</item>
         <item name="android:direction">right_to_left</item>
+
+        <item name="android:textColorPrimary">@color/text_main</item>
+        <item name="android:textColorSecondary">#83888C</item>
+        <item name="android:textColor">@color/text_main</item>
+<!--        <item name="android:text">#83888C</item>-->
+
+
+        <item name="android:background">@color/blue_light</item>
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:colorBackground">@color/blue_light</item>
+
+
+        <item name="android:windowBackground">@color/blue_light</item>
+        <item name="tint">@color/text_main</item>
+
+
+        <item name="android:strokeColor">#E8E8E8</item>
+        <item name="android:fillColor">#B7B7B7</item>
+        <item name="android:solidColor">#F4F5F7</item>
+
+
+        <item name="cardElevation">40dp</item>
+        <item name="android:outlineSpotShadowColor" tools:targetApi="p">#E8E8E8</item>
+
+
     </style>
 
 
@@ -107,6 +133,14 @@
 
     <style name="BaseBottomSheetDialog" parent="@style/Theme.Design.Light.BottomSheetDialog">
         <item name="android:windowIsFloating">false</item>
+
+<!--        <item name="android:backgroundDimAmount">0.3</item>-->
+<!--        <item name="android:windowFrame">@null</item>-->
+<!--        <item name="android:backgroundDimEnabled">false</item>-->
+<!--        <item name="android:windowIsTranslucent">true</item>-->
+<!--        <item name="android:windowContentOverlay">@null</item>-->
+<!--        <item name="android:colorBackground">@android:color/transparent</item>-->
+
         <item name="bottomSheetStyle">@style/BottomSheet</item>
     </style>
 

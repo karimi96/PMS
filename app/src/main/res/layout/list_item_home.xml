@@ -17,6 +17,7 @@
         app:cardElevation="2dp">
 
         <RelativeLayout
+            android:backgroundTint="?android:backgroundTint"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -30,7 +31,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
                 android:text="رفع خرابی"
-                android:textColor="@color/text_main" />
+                android:textColor="?android:textColorPrimary" />
 
 
             <ImageView
@@ -40,7 +41,8 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="10dp"
                 android:layout_marginBottom="5dp"
-                android:src="@drawable/place_gray_ic" />
+                android:src="@drawable/place_gray_ic"
+                app:tint="@null" />
 
 
             <TextView
@@ -49,15 +51,15 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="5dp"
+                android:layout_marginEnd="70dp"
                 android:layout_marginBottom="2dp"
+                android:layout_toStartOf="@+id/dayName"
                 android:layout_toEndOf="@id/img_place"
                 android:ellipsize="end"
-                android:singleLine="true"
-                android:layout_marginEnd="70dp"
-                android:layout_toStartOf="@+id/dayName"
                 android:fontFamily="@font/iran_sans_fanum"
+                android:singleLine="true"
                 android:text="15 خرداد کوچه 39 15 خرداد کوچه 39 15 خرداد کوچه 39"
-                android:textColor="@color/text_main"
+                android:textColor="?android:textColorPrimary"
                 android:textSize="14dp" />
 
             <TextView
@@ -73,19 +75,16 @@
                 android:textSize="12dp" />
 
 
-            <TextView
+            <ImageView
                 android:id="@+id/circle"
                 android:layout_width="7dp"
                 android:layout_height="7dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginTop="5dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/circle_gray"
-                android:fontFamily="@font/iran_sans_fanum"
-                android:textColor="@color/text_main"
-                android:textSize="12dp" />
+                android:src="@drawable/circle_gray"
+                app:tint="@null" />
 
 
             <TextView

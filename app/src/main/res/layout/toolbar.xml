@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/toolbar_home"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:background="@color/blue">
+    android:backgroundTint="?android:background">
 
     <ImageView
         android:id="@+id/setting_slider"
@@ -14,7 +15,8 @@
         android:layout_marginStart="9dp"
         android:background="?attr/actionBarItemBackground"
         android:padding="8dp"
-        android:src="@drawable/setting_ic" />
+        android:src="@drawable/setting_ic"
+        app:tint="@null" />
 
     <ImageView
         android:id="@+id/filtering"
@@ -25,6 +27,7 @@
         android:layout_marginEnd="8dp"
         android:background="?attr/actionBarItemBackground"
         android:padding="8dp"
+        app:tint="@null"
         android:src="@drawable/filter_ic" />
 
 
@@ -36,6 +39,7 @@
         android:drawablePadding="2dp"
         android:fontFamily="@font/inter"
         android:text="PM"
+        android:backgroundTint="?android:background"
         android:textColor="@color/white"
         android:textSize="28dp"
         android:textStyle="bold" />
