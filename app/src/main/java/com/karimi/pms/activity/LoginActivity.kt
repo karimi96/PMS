@@ -8,6 +8,7 @@ import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
 import androidx.transition.Fade
@@ -16,6 +17,7 @@ import androidx.transition.Transition
 import androidx.transition.TransitionManager
 import com.karimi.pms.R
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.bottom_sheet_setting.*
 import kotlinx.android.synthetic.main.forget_pass.*
 import kotlinx.android.synthetic.main.login_email.*
 import kotlinx.android.synthetic.main.login_pass.*
@@ -33,12 +35,21 @@ class LoginActivity : AppCompatActivity() {
         lunchValidation()
         lunchForgetPass()
         countDownTimer()
+
+        switch_test.setOnCheckedChangeListener { compoundButton, b ->
+            if (switch_test.isChecked){
+                toast("on")
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            }else {
+                toast("off")
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
+        }
     }
 
 
     private fun lunchPhonePage() {
         val slideAnimation = AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left)
-        slideAnimation.duration = 1000
         slideAnimation.duration = 1000
         img_phone.startAnimation(slideAnimation)
         tv_enterYourPhone.startAnimation(slideAnimation)
@@ -137,6 +148,7 @@ class LoginActivity : AppCompatActivity() {
                     HomeActivity::class.java
                 )
             )
+            in_pass.visibility = View.GONE
         }
     }
 

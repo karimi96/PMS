@@ -9,10 +9,12 @@
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable-v24/item_border_btn_cancel.xml" value="0.132" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable-v24/item_border_red.xml" value="0.1465" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/back_circle.xml" value="0.18" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/back_ic.xml" value="0.1165" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/btn.xml" value="0.153" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/circle_red.xml" value="0.1" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/close_ic.xml" value="0.17" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/home_ic.xml" value="0.1265" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/ic_back_white.xml" value="0.1" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/ic_launcher_background.xml" value="0.127" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/ic_round_check_24.xml" value="0.1265" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/item_back_bottom_sheet.xml" value="0.119" />
@@ -31,6 +33,7 @@
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/item_border_spinner.xml" value="0.1265" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/item_btn_background.xml" value="0.1" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/karimi.xml" value="0.1" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/lock_ic.xml" value="0.1165" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/moon_ic.xml" value="0.104" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/more_b_ic.xml" value="0.133" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/phone_call_ic.xml" value="0.1325" />
@@ -64,8 +67,8 @@
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/dialog_record_activity.xml" value="0.22" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/forget_pass.xml" value="0.25" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/list_item_home.xml" value="1.25" />
-        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/login_email.xml" value="0.25" />
-        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/login_pass.xml" value="0.33" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/login_email.xml" value="0.23026315789473684" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/login_pass.xml" value="0.75" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/reason_cansel.xml" value="0.2" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/record_activity.xml" value="0.1947463768115942" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/sign_up.xml" value="0.22" />

@@ -2,11 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:id="@+id/constraintLayout1"
-    android:animateLayoutChanges="true"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="?android:background"
+    android:backgroundTint="@null"
     android:focusableInTouchMode="true">
 
 
@@ -14,9 +14,10 @@
         android:id="@+id/img_phone"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:visibility="visible"
+        android:backgroundTint="@null"
         android:padding="15dp"
         android:src="@drawable/pic_login_email"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,9 +31,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
         android:layout_marginTop="10dp"
+        android:backgroundTint="@null"
         android:text="لطفا شماره همراه خود را وارد نمایید."
-        android:textColor="@color/text_main"
+        android:textColor="?android:textColorPrimary"
         android:textSize="13dp"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline" />
 
@@ -44,8 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="31dp"
         android:layout_marginEnd="35dp"
-        android:hint=" "
-        android:textColorHint="@color/text_hint"
+        android:hint="تلفن همراه"
         app:hintTextAppearance="@style/CustomHintSize"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintTop_toTopOf="@+id/guideline6"
@@ -56,9 +58,9 @@
             style="@style/CustomTextInputEditText"
             android:drawableStart="@drawable/phone_ic"
             android:fontFamily="@font/iran_sans_fanum"
-            android:imeOptions="actionDone"
-            android:hint="تلفن همراه"
             android:gravity="right"
+            android:hint=" "
+            android:imeOptions="actionDone"
             android:inputType="phone"
             android:paddingVertical="10dp"
             android:paddingTop="15dp" />
@@ -82,12 +84,23 @@
         android:layout_marginHorizontal="35dp"
         android:background="@drawable/item_btn_background"
         android:gravity="center"
+
         android:text="ادامه"
         android:textColor="@color/white"
         android:textSize="16dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline11"
         app:layout_constraintTop_toTopOf="@+id/guideline11"
         tools:layout_editor_absoluteX="35dp" />
+
+    <Switch
+        android:id="@+id/switch_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nextPhone" />
 
 
     <androidx.constraintlayout.widget.Guideline
