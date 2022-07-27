@@ -78,6 +78,9 @@
         <item name="android:windowIsFloating">false</item>
 
         <item name="colorSecondary">?android:fillColor</item>
+        <item name="background">?background</item>
+        <item name="android:textColor">?colorPrimaryVariant</item>
+
 
         <!--        <item name="android:backgroundDimAmount">0.3</item>-->
         <!--        <item name="android:windowFrame">@null</item>-->

@@ -13,9 +13,11 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.PreferenceManager
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.karimi.pms.R
+import com.karimi.pms.adapter.FilterAdapter
 import com.karimi.pms.adapter.RequestAdapter
 import com.karimi.pms.modal.Request
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.bottom_sheet_filter.*
 import kotlinx.android.synthetic.main.bottom_sheet_setting.*
 import kotlinx.android.synthetic.main.box_chat.*
 import kotlinx.android.synthetic.main.box_reason_c.*
@@ -34,13 +36,13 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
 
         checkTheme()
 //        checkDefaultNightMode()
-        initRecycler()
+        initRecyclerHome()
         initBottomSheetSitting()
         initBottomSheetFiltering()
     }
 
 
-    private fun initRecycler() {
+    private fun initRecyclerHome() {
         initListAdapter()
         adapter = RequestAdapter(listRequest, applicationContext, this)
         recycler.adapter = adapter
@@ -130,11 +132,24 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
     }
 
 
+    private fun initRecyclerFilter() : FilterAdapter{
+        var list = ArrayList<String>()
+        list.add("نصب")
+        list.add("جمع اوری")
+        list.add("بازدید دوره")
+        list.add("رفع خرابی")
+        return FilterAdapter(list, applicationContext)
+    }
+
+
     private fun initBottomSheetFiltering() {
         filtering.setOnClickListener {
-            val dialog = BottomSheetDialog(this)
-            dialog.setContentView(R.layout.bottom_sheet_filter)
-            dialog.show()
+            val d = BottomSheetDialog(this, R.style.BottomSheetDialogTheme)
+            d.setContentView(R.layout.bottom_sheet_filter)
+            d.show()
+            d.recyler_filter.adapter = initRecyclerFilter()
+//             arrayOf(d.relative_installation, d.relative_Collect, d.relative_Visit, d.relative_FixedCrash).forEach {
+//                 it.setOnClickListener {  } }
         }
     }
 
