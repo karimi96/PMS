@@ -9,6 +9,13 @@ class Session {
 
     private val PREF_EXTRAS = "SSP"
 
+//    constructor(){
+//        ExtrasPref = App().context?.getSharedPreferences(PREF_EXTRAS, Context.MODE_PRIVATE)
+
+//        ExtrasPref = App.context.getSharedPreferences(PREF_EXTRAS, Context.MODE_PRIVATE)
+//        extraEditor = ExtrasPref!!.edit()
+//    }
+
 
     fun Session() {
         ExtrasPref = App().context?.getSharedPreferences(PREF_EXTRAS, Context.MODE_PRIVATE)
@@ -16,7 +23,7 @@ class Session {
         extraEditor = ExtrasPref!!.edit()
     }
 
-    fun getInstance(): com.karimi.pms.helper.Session? {
+    fun getInstance() : com.karimi.pms.helper.Session {
         return com.karimi.pms.helper.Session()
     }
 

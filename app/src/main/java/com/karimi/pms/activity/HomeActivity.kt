@@ -2,6 +2,7 @@ package com.karimi.pms.activity
 
 import android.annotation.SuppressLint
 import android.app.Dialog
+import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import android.view.View
@@ -11,9 +12,11 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.preference.PreferenceManager
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.karimi.pms.R
 import com.karimi.pms.adapter.RequestAdapter
+import com.karimi.pms.helper.Session
 import com.karimi.pms.modal.Request
 import com.karimi.pms.widget.BottomSheetSettingWidget
 import kotlinx.android.synthetic.main.activity_home.*
@@ -34,7 +37,8 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-
+        checkTheme()
+//        checkDefaultNightMode()
         initRecycler()
         initSitting()
         initFiltering()
@@ -79,22 +83,69 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
 //            val view = layoutInflater.inflate(R.layout.bottom_sheet_setting, null)
             dialog.setContentView(R.layout.bottom_sheet_setting)
 
-            dialog.window?.setBackgroundDrawable(null)
-            dialog.switch_nightMode.setOnCheckedChangeListener { compoundButton, b ->
-                if (dialog.switch_nightMode.isChecked){
-                     toast("on")
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                }else {
-                    toast("off")
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-                }
-            }
-//            saveNightModeToPreferences(newNightMode);
-//            recreate();
+            dialog.switch_nightMode.setOnCheckedChangeListener { compoundButton, b -> initSwitch(dialog) }
+            if (MyPreferences(this).darkMode == 1) dialog.switch_nightMode.isChecked = true
+
             dialog.show()
         }
     }
 
+
+    private fun initSwitch(dialog : BottomSheetDialog){
+        if (dialog.switch_nightMode.isChecked){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            MyPreferences(this).darkMode = 1
+            delegate.applyDayNight()
+//
+        }else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            MyPreferences(this).darkMode = 2
+            delegate.applyDayNight()
+        }
+    }
+
+
+
+    private fun checkTheme() {
+        when (MyPreferences(this).darkMode) {
+//            0 -> {
+//                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+//                delegate.applyDayNight()
+//            }
+            1 -> {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                delegate.applyDayNight()
+            }
+            2 -> {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                delegate.applyDayNight()
+            }
+        }
+    }
+
+
+
+    class MyPreferences(context: Context?) {
+
+        companion object {
+            private const val DARK_STATUS = "io.github.manuelernesto.DARK_STATUS"
+        }
+
+        private val preferences = PreferenceManager.getDefaultSharedPreferences(context)
+
+        var darkMode = preferences.getInt(DARK_STATUS, 0)
+            set(value) = preferences.edit().putInt(DARK_STATUS, value).apply()
+
+    }
+
+
+//    private fun checkDefaultNightMode(){
+//        var a = Session().getInstance()?.getInt("switchOn")
+//        when(a){
+//            1 -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+//            2 -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+//        }
+//    }
 
     private fun initFiltering() {
         filtering.setOnClickListener {
