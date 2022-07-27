@@ -3,22 +3,18 @@ package com.karimi.pms.activity
 import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Context
-import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.PreferenceManager
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.karimi.pms.R
 import com.karimi.pms.adapter.RequestAdapter
-import com.karimi.pms.helper.Session
 import com.karimi.pms.modal.Request
-import com.karimi.pms.widget.BottomSheetSettingWidget
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.bottom_sheet_setting.*
 import kotlinx.android.synthetic.main.box_chat.*
@@ -26,7 +22,6 @@ import kotlinx.android.synthetic.main.box_reason_c.*
 import kotlinx.android.synthetic.main.dialog_filter_detail.*
 import kotlinx.android.synthetic.main.dialog_reason_cansel.*
 import kotlinx.android.synthetic.main.toolbar.*
-import java.util.jar.Manifest
 
 class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
     var listRequest: ArrayList<Request> = ArrayList()
@@ -40,8 +35,8 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
         checkTheme()
 //        checkDefaultNightMode()
         initRecycler()
-        initSitting()
-        initFiltering()
+        initBottomSheetSitting()
+        initBottomSheetFiltering()
     }
 
 
@@ -77,22 +72,24 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
 
 
     @SuppressLint("ResourceAsColor")
-    private fun initSitting() {
+    private fun initBottomSheetSitting() {
         setting_slider.setOnClickListener {
-            val dialog = BottomSheetDialog(this, R.style.BottomSheetDialogTheme)
-//            val view = layoutInflater.inflate(R.layout.bottom_sheet_setting, null)
-            dialog.setContentView(R.layout.bottom_sheet_setting)
+            val bsh = BottomSheetDialog(this, R.style.BottomSheetDialogTheme)
+//            val view = layoutI
+//            nflater.inflate(R.layout.bottom_sheet_setting, null)
+            bsh.setContentView(R.layout.bottom_sheet_setting)
 
-            dialog.switch_nightMode.setOnCheckedChangeListener { compoundButton, b -> initSwitch(dialog) }
-            if (MyPreferences(this).darkMode == 1) dialog.switch_nightMode.isChecked = true
+            bsh.switch_nightMode.setOnCheckedChangeListener { compoundButton, b -> initSwitch(bsh) }
+            if (MyPreferences(this).darkMode == 1) bsh.switch_nightMode.isChecked = true
 
-            dialog.show()
+            bsh.exitAccount.setOnClickListener { finishAffinity() }
+            bsh.show()
         }
     }
 
 
-    private fun initSwitch(dialog : BottomSheetDialog){
-        if (dialog.switch_nightMode.isChecked){
+    private fun initSwitch(bsh : BottomSheetDialog){
+        if (bsh.switch_nightMode.isChecked){
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
             MyPreferences(this).darkMode = 1
             delegate.applyDayNight()
@@ -105,13 +102,8 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
     }
 
 
-
     private fun checkTheme() {
         when (MyPreferences(this).darkMode) {
-//            0 -> {
-//                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-//                delegate.applyDayNight()
-//            }
             1 -> {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                 delegate.applyDayNight()
@@ -122,7 +114,6 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
             }
         }
     }
-
 
 
     class MyPreferences(context: Context?) {
@@ -139,19 +130,10 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
     }
 
 
-//    private fun checkDefaultNightMode(){
-//        var a = Session().getInstance()?.getInt("switchOn")
-//        when(a){
-//            1 -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-//            2 -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-//        }
-//    }
-
-    private fun initFiltering() {
+    private fun initBottomSheetFiltering() {
         filtering.setOnClickListener {
             val dialog = BottomSheetDialog(this)
             dialog.setContentView(R.layout.bottom_sheet_filter)
-//            dialog.window?.setBackgroundDrawableResource(R.drawable.item_border_bottom_sheet)
             dialog.show()
         }
     }
@@ -220,6 +202,7 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
         }
         d.show()
     }
+
 
     private fun toast(text: String) {
         Toast.makeText(applicationContext, text, Toast.LENGTH_SHORT).show()
