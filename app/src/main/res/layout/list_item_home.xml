@@ -17,7 +17,7 @@
         app:cardElevation="2dp">
 
         <RelativeLayout
-            android:backgroundTint="?android:backgroundTint"
+            android:background="?colorOnPrimary"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -97,7 +97,7 @@
                 android:layout_toStartOf="@id/circle"
                 android:fontFamily="@font/iran_sans_fanum"
                 android:text="فوری"
-                android:textColor="@color/text_hint"
+                android:textColor="?android:fillColor"
                 android:textSize="12dp" />
 
         </RelativeLayout>

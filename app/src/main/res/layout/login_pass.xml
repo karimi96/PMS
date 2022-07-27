@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?android:background"
+    android:background="?android:colorBackground"
     android:focusableInTouchMode="true">
 
 
@@ -35,6 +35,7 @@
         android:id="@+id/textField_phone"
         style="@style/CustomTextInputLayout"
         android:hint="رمز عبور"
+        android:background="?android:background"
         app:endIconMode="password_toggle"
         app:layout_constraintBottom_toTopOf="@+id/guideline1"
         tools:ignore="MissingConstraints">

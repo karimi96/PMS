@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?android:background"
-    android:backgroundTint="@null"
     android:focusableInTouchMode="true">
 
 
@@ -14,7 +13,6 @@
         android:id="@+id/img_phone"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:backgroundTint="@null"
         android:padding="15dp"
         android:src="@drawable/pic_login_email"
         android:visibility="visible"
@@ -31,7 +29,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
         android:layout_marginTop="10dp"
-        android:backgroundTint="@null"
         android:text="لطفا شماره همراه خود را وارد نمایید."
         android:textColor="?android:textColorPrimary"
         android:textSize="13dp"
@@ -48,6 +45,8 @@
         android:layout_marginStart="31dp"
         android:layout_marginEnd="35dp"
         android:hint="تلفن همراه"
+        android:textColorHint="?android:textColorHint"
+        app:hintAnimationEnabled="true"
         app:hintTextAppearance="@style/CustomHintSize"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintTop_toTopOf="@+id/guideline6"
@@ -59,7 +58,6 @@
             android:drawableStart="@drawable/phone_ic"
             android:fontFamily="@font/iran_sans_fanum"
             android:gravity="right"
-            android:hint=" "
             android:imeOptions="actionDone"
             android:inputType="phone"
             android:paddingVertical="10dp"

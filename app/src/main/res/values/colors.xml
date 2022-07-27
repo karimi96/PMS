@@ -20,7 +20,10 @@
     <color name="border_line">#e8e8e8</color>
     <color name="background">#E5E5E5</color>
 
-    <color name="test_karimi" tools:override="true">#673AB7</color>
+
+<!--    night -->
+    <color name="black_night">#292929</color>
+
 
 
 </resources>

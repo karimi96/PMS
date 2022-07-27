@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="?android:background"
     android:focusableInTouchMode="true">
 
 
@@ -26,7 +26,7 @@
         android:layout_marginHorizontal="35dp"
         android:layout_marginTop="20dp"
         android:text="لطفا کد ارسال شده به شماره همراه خود را در کادر زیر وارد نمایید."
-        android:textColor="@color/text_main"
+        android:textColor="?android:textColorPrimary"
         android:textSize="13dp"
         app:layout_constraintTop_toBottomOf="@+id/img_verification"
         tools:ignore="MissingConstraints"
@@ -64,7 +64,7 @@
         android:layout_marginEnd="35dp"
         android:fontFamily="@font/iran_sans_fanum"
         android:text="1:56"
-        android:textColor="@color/text_main"
+        android:textColor="?android:textColorPrimary"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/linear_verification" />

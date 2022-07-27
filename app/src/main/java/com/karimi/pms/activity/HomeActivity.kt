@@ -78,7 +78,7 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
             val dialog = BottomSheetDialog(this, R.style.BottomSheetDialogTheme)
 //            val view = layoutInflater.inflate(R.layout.bottom_sheet_setting, null)
             dialog.setContentView(R.layout.bottom_sheet_setting)
-            dialog.nameSetting.setTextColor(R.color.white)
+
             dialog.window?.setBackgroundDrawable(null)
             dialog.switch_nightMode.setOnCheckedChangeListener { compoundButton, b ->
                 if (dialog.switch_nightMode.isChecked){

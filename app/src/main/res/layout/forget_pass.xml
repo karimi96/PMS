@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="?android:background"
     android:focusableInTouchMode="true">
 
     <ImageView
@@ -42,7 +42,6 @@
         android:id="@+id/textField1"
         style="@style/CustomTextInputLayout"
         android:hint=" رمز عبور جدید"
-        android:textColorHint="@color/text_hint"
         app:endIconMode="password_toggle"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         tools:ignore="MissingConstraints">

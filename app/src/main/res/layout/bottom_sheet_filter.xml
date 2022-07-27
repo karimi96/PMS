@@ -6,10 +6,11 @@
     <View
         android:id="@+id/line"
         android:layout_width="120dp"
-        android:background="@drawable/item_border_line_sheet"
+        android:layout_height="3dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:layout_height="3dp"/>
+        android:backgroundTint="@null"
+        android:background="@drawable/item_border_line_sheet" />
 
     <TextView
         android:id="@+id/filter"

@@ -25,7 +25,7 @@
         android:layout_marginEnd="28dp"
         android:background="?attr/actionBarItemBackground"
         android:padding="6dp"
-        android:src="@drawable/back_ic"
+        android:src="@drawable/ic_back_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
