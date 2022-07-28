@@ -180,14 +180,14 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
         dialog.close_detail.setOnClickListener { dialog.dismiss() }
 
         var k = 0
-        dialog.showMore.setOnClickListener {
+        dialog.tv_showMore.setOnClickListener {
             k++
             if (k % 2 != 0) {
-                dialog.passage_short.visibility = View.GONE
-                dialog.passage_long.visibility = View.VISIBLE
+                arrayOf(dialog.passage_short, dialog.img_showMore_down).forEach { it.visibility = View.GONE }
+                arrayOf(dialog.passage_long, dialog.img_showMore_up).forEach { it.visibility = View.VISIBLE }
             } else {
-                dialog.passage_short.visibility = View.VISIBLE
-                dialog.passage_long.visibility = View.GONE
+                arrayOf(dialog.passage_long, dialog.img_showMore_up).forEach { it.visibility = View.GONE }
+                arrayOf(dialog.passage_short, dialog.img_showMore_down).forEach { it.visibility = View.VISIBLE }
             }
 //            var n =  (300 * Resources.getSystem().displayMetrics.density).toInt()
 //            dialog.scroll.scrollTo(0, n)
