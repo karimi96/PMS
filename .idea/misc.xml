@@ -14,6 +14,7 @@
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/btn.xml" value="0.153" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/circle_red.xml" value="0.1" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/close_ic.xml" value="0.17" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/format_align_right_ic.xml" value="0.2115" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/home_ic.xml" value="0.1265" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/ic_back_white.xml" value="0.1" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/drawable/ic_launcher_background.xml" value="0.127" />
@@ -61,19 +62,23 @@
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/bottom_sheet_setting.xml" value="0.4276885043263288" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/box_chat.xml" value="0.38972431077694236" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/box_explain.xml" value="0.25" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/box_explain_reason_cancel.xml" value="0.20416666666666666" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/box_explain_savaActivity.xml" value="0.20416666666666666" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/box_explain_sava_activity.xml" value="0.20416666666666666" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/box_reason_c.xml" value="0.2" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/box_record_activity.xml" value="0.1947463768115942" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/box_spinner.xml" value="0.33" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/box_transaction_code.xml" value="0.1947463768115942" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/chat_box.xml" value="0.25" />
-        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/dialog_filter_detail.xml" value="0.42544459644322846" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/dialog_filter_detail.xml" value="0.3647342995169082" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/dialog_reason_cansel.xml" value="0.25" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/dialog_record_activity.xml" value="0.22" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/dialog_save_activity.xml" value="0.20416666666666666" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/forget_pass.xml" value="0.25" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/list_item_filtring.xml" value="0.67" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/list_item_home.xml" value="0.2644694533762058" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/login_email.xml" value="0.23026315789473684" />
-        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/login_pass.xml" value="0.5" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/login_pass.xml" value="0.33705357142857145" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/reason_cansel.xml" value="0.2" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/record_activity.xml" value="0.1947463768115942" />
         <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/PMS/app/src/main/res/layout/sign_up.xml" value="0.22" />

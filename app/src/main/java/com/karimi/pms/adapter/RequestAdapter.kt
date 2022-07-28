@@ -3,13 +3,18 @@ package com.karimi.pms.adapter
 import android.content.Context
 import android.graphics.Color
 import android.os.Build
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
+import androidx.transition.Slide
+import androidx.transition.Transition
+import androidx.transition.TransitionManager
 import com.karimi.pms.R
 import com.karimi.pms.modal.Request
+import kotlinx.android.synthetic.main.dialog_filter_detail.*
 import kotlinx.android.synthetic.main.list_item_home.view.*
 
 class RequestAdapter(list: ArrayList<Request>, context: Context, listener: Listener) :
@@ -37,7 +42,8 @@ class RequestAdapter(list: ArrayList<Request>, context: Context, listener: Liste
         var circle = view.circle
 
         init {
-            itemView.setOnClickListener { listener.showDialog() }
+            itemView.setOnClickListener {
+                listener.showDialog() }
         }
     }
 

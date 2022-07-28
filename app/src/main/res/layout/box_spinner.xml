@@ -1,53 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-<!--    <com.google.android.material.textfield.TextInputLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        app:endIconDrawable="@drawable/more_b_ic"-->
-<!--        android:background="@drawable/item_border_spinner"-->
-<!--        android:layout_height="60dp">-->
-
-<!--        <com.google.android.material.textfield.TextInputEditText-->
-<!--            android:hint="انتخاب کنید."-->
-<!--            android:fontFamily="@font/iran_sans"-->
-<!--            android:textSize="14dp"-->
-<!--            android:layout_width="match_parent"-->
-<!--            style="@style/TextAppearance.AppCompat.Widget.DropDownItem"-->
-<!--            android:layout_height="match_parent"/>-->
-
-
-<!--    </com.google.android.material.textfield.TextInputLayout>-->
+    android:backgroundTint="@null"
+    android:focusableInTouchMode="true">
 
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:layout_gravity="left"
-        android:hint="انتخاب کنید"
-        app:boxStrokeWidth="1dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="25dp"
+        android:textColorHint="?android:fillColor"
         app:boxCornerRadiusBottomEnd="5dp"
         app:boxCornerRadiusBottomStart="5dp"
         app:boxCornerRadiusTopEnd="5dp"
         app:boxCornerRadiusTopStart="5dp"
-        app:boxStrokeColor="@color/text_hint"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="25dp"
-        android:layout_marginHorizontal="20dp"
-        android:textColorHint="@color/text_hint"
-        app:endIconTint="@color/text_hint"
+        app:boxStrokeColor="?android:fillColor"
+        app:boxStrokeWidth="1dp"
         app:endIconDrawable="@drawable/more_b_ic"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        app:endIconTint="?android:fillColor"
+        app:hintAnimationEnabled="false"
+        app:hintEnabled="false">
 
         <AutoCompleteTextView
             android:id="@+id/auto_complete_txt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginHorizontal="20dp"
+            android:background="@null"
+            android:fontFamily="@font/iran_sans"
+            android:hint="انتخاب کنید"
             android:inputType="none"
-            />
+            android:paddingBottom="9dp"
+            android:textColor="?android:textColorPrimary"
+            android:textColorHint="?android:textColorHint"
+            android:textSize="14dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </RelativeLayout>
