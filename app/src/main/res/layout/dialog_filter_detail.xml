@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView_dialog"
     android:layout_width="match_parent"
     android:layout_height="535dp"
-    android:id="@+id/cardView_dialog"
     android:foreground="@drawable/item_border_dialog"
     android:outlineSpotShadowColor="?android:outlineSpotShadowColor"
     app:cardCornerRadius="10dp"
@@ -71,8 +71,8 @@
         <androidx.core.widget.NestedScrollView
             android:id="@+id/scroll"
             android:layout_width="match_parent"
-            android:layout_above="@id/ll"
             android:layout_height="wrap_content"
+            android:layout_above="@id/ll"
             android:layout_below="@id/line">
 
             <RelativeLayout
@@ -152,11 +152,12 @@
                         android:id="@+id/phoneUser"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignBottom="@id/phone"
+                        android:layout_alignParentBottom="true"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="8dp"
                         android:layout_toEndOf="@id/phone"
                         android:fontFamily="@font/iran_sans_fanum"
+                        android:gravity="bottom"
                         android:text="09121537381"
                         android:textColor="?android:textColorPrimary"
                         android:textSize="14dp" />
@@ -196,31 +197,29 @@
 
                 </RelativeLayout>
 
-
-                <LinearLayout
-                    android:id="@+id/map"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card"
                     android:layout_width="match_parent"
                     android:layout_height="113dp"
                     android:layout_below="@id/rv3"
                     android:layout_marginHorizontal="20dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/item_border_map">
+                    android:background="@drawable/item_border_map"
+                    app:cardCornerRadius="5dp">
 
-                    <ImageView
+                    <org.osmdroid.views.MapView
+                        android:id="@+id/map"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/map"
-                        app:tint="@null" />
+                        android:layout_height="match_parent" />
 
-                </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
                 <include
                     android:id="@+id/chat_in"
                     layout="@layout/box_chat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/map"
+                    android:layout_below="@id/card"
                     android:layout_marginHorizontal="20dp"
                     android:layout_marginTop="25dp"
                     android:layout_marginBottom="5dp" />
@@ -232,64 +231,63 @@
 
         <LinearLayout
             android:id="@+id/ll"
-            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/tv_doing"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:layout_marginTop="25dp"
-
-            android:background="@drawable/item_border_btn_i_do"
-            android:backgroundTint="@null"
-            android:fontFamily="@font/iran_sans"
-            android:gravity="center"
-            android:text="انجام میدم"
-            android:textColor="@color/white"
-            android:textSize="16dp" />
-
-
-        <LinearLayout
-            android:id="@+id/linear_done_cancel"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:layout_below="@id/scroll"
-            android:layout_marginTop="26dp"
-            android:layout_marginBottom="20dp"
-            android:orientation="horizontal"
-            android:paddingHorizontal="20dp"
-            android:visibility="gone">
-
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/done"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/item_border_btn_done"
+                android:id="@+id/tv_doing"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/item_border_btn_i_do"
+                android:backgroundTint="@null"
                 android:fontFamily="@font/iran_sans"
-                android:gravity="center_vertical|center_horizontal"
-                android:text="انجام شد"
+                android:gravity="center"
+                android:text="انجام میدم"
                 android:textColor="@color/white"
                 android:textSize="16dp" />
 
-            <TextView
-                android:id="@+id/cancel"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/item_border_btn_cancel"
-                android:fontFamily="@font/iran_sans"
-                android:gravity="center"
-                android:text="انصراف"
-                android:textColor="@color/blue_light"
-                android:textSize="16dp" />
 
-        </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linear_done_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_below="@id/scroll"
+                android:layout_marginTop="26dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
+                android:visibility="gone">
+
+
+                <TextView
+                    android:id="@+id/done"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/item_border_btn_done"
+                    android:fontFamily="@font/iran_sans"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="انجام شد"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/cancel"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/item_border_btn_cancel"
+                    android:fontFamily="@font/iran_sans"
+                    android:gravity="center"
+                    android:text="انصراف"
+                    android:textColor="@color/blue_light"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
         </LinearLayout>
 
 

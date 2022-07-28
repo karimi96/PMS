@@ -28,6 +28,11 @@ import kotlinx.android.synthetic.main.box_reason_c.*
 import kotlinx.android.synthetic.main.dialog_filter_detail.*
 import kotlinx.android.synthetic.main.dialog_reason_cansel.*
 import kotlinx.android.synthetic.main.toolbar.*
+import org.osmdroid.config.Configuration
+import org.osmdroid.tileprovider.tilesource.TileSourceFactory
+import org.osmdroid.util.GeoPoint
+import org.osmdroid.views.CustomZoomButtonsController
+import org.osmdroid.views.overlay.Marker
 
 class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
     var listRequest: ArrayList<Request> = ArrayList()
@@ -36,6 +41,7 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Configuration.getInstance().load(this, android.preference.PreferenceManager.getDefaultSharedPreferences(this))
         setContentView(R.layout.activity_home)
 
         checkTheme()
@@ -170,9 +176,6 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
         val width = metrics.widthPixels
         val height = metrics.heightPixels
 
-
-
-
         val dialog = Dialog(this)
         dialog.setContentView(R.layout.dialog_filter_detail)
         dialog.setCancelable(false)
@@ -184,7 +187,7 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
         )
 
 
-
+        lunchMap(dialog)
         dialog.close_detail.setOnClickListener { dialog.dismiss() }
 
         var k = 0
@@ -193,7 +196,7 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
             if (k % 2 != 0) {
                 arrayOf(dialog.passage_short, dialog.img_showMore_down).forEach { it.visibility = View.GONE }
                 arrayOf(dialog.passage_long, dialog.img_showMore_up).forEach { it.visibility = View.VISIBLE }
-                
+
                 dialog.scroll.post { dialog.scroll.fullScroll(View.FOCUS_DOWN) }
 
             } else {
@@ -260,6 +263,25 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
         recycler.layoutAnimation = layoutAnimationController
         recycler.adapter!!.notifyDataSetChanged()
         recycler.scheduleLayoutAnimation()
+    }
+
+
+    private fun lunchMap(d : Dialog){
+        d.map.setTileSource(TileSourceFactory.MAPNIK)
+        d.map.isTilesScaledToDpi = true
+        d.map.zoomController.setVisibility(CustomZoomButtonsController.Visibility.NEVER)
+        d.map.setBuiltInZoomControls(false)
+        d.map.setMultiTouchControls(true)
+        val mapController = d.map.controller
+        mapController.setZoom(16.0)
+        val startPoint = GeoPoint(34.629634,50.913787) //55.751442, 37.615569
+        mapController.setCenter(startPoint)
+
+        var marker = Marker(d.map)
+        marker.position = GeoPoint(34.629634,50.913787)
+        marker.icon = getDrawable(R.drawable.ic_location)
+        d.map.overlays.add(marker)
+        d.map.invalidate()
     }
 
 }
