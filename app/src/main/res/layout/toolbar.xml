@@ -18,6 +18,7 @@
         android:src="@drawable/setting_ic"
         app:tint="@null" />
 
+
     <ImageView
         android:id="@+id/filtering"
         android:layout_width="40dp"

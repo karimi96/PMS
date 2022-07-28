@@ -17,7 +17,7 @@
         app:cardElevation="2dp">
 
         <RelativeLayout
-            android:background="?colorOnPrimary"
+            android:background="@drawable/ripple_item_recycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
