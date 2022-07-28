@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
@@ -39,6 +40,8 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
         initRecyclerHome()
         initBottomSheetSitting()
         initBottomSheetFiltering()
+
+
     }
 
 
@@ -153,6 +156,13 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
         }
     }
 
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        var h = window.decorView.height
+//        Log.e("000", "showDialog: $h" )
+
+    }
+
 
     override fun showDialog() {
         val metrics = resources.displayMetrics
@@ -161,10 +171,12 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
         val dialog = Dialog(this)
         dialog.setContentView(R.layout.dialog_filter_detail)
         dialog.setCancelable(false)
-        dialog.window?.setLayout(
+
+         dialog.window?.setLayout(
             ((6.3 * width) / 7).toInt(),
-            ViewGroup.LayoutParams.WRAP_CONTENT
+          ViewGroup.LayoutParams.WRAP_CONTENT
         )
+
         dialog.close_detail.setOnClickListener { dialog.dismiss() }
 
         var k = 0
@@ -177,7 +189,12 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
                 dialog.passage_short.visibility = View.VISIBLE
                 dialog.passage_long.visibility = View.GONE
             }
+//            var n =  (300 * Resources.getSystem().displayMetrics.density).toInt()
+//            dialog.scroll.scrollTo(0, n)
         }
+
+
+
 
 
         dialog.tv_doing.setOnClickListener {
@@ -195,6 +212,9 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
         dialog.window?.setBackgroundDrawableResource(R.drawable.item_border_dialog)
         dialog.show()
     }
+
+
+
 
 
     private fun reasonOfCancel() {
