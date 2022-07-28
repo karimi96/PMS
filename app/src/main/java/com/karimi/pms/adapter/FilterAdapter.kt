@@ -32,7 +32,7 @@ class FilterAdapter(list: ArrayList<String>, context: Context) :
 
         init {
             itemView.setOnClickListener {
-                title.setTextColor(android.R.attr.textColor)
+//                title.setTextColor(android.R.attr.textColor)
 //                title.setTextColor(R.color.blue_night)
                 img.visibility = View.VISIBLE
                 relative.setBackgroundColor(Color.parseColor("#292929"))
