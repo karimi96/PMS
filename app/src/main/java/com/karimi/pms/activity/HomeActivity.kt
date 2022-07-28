@@ -4,15 +4,18 @@ import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.widget.NestedScrollView
 import androidx.preference.PreferenceManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.karimi.pms.R
 import com.karimi.pms.adapter.FilterAdapter
 import com.karimi.pms.adapter.RequestAdapter
@@ -36,7 +39,6 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
         setContentView(R.layout.activity_home)
 
         checkTheme()
-//        checkDefaultNightMode()
         initRecyclerHome()
         initBottomSheetSitting()
         initBottomSheetFiltering()
@@ -122,7 +124,6 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
 
 
     class MyPreferences(context: Context?) {
-
         companion object {
             private const val DARK_STATUS = "io.github.manuelernesto.DARK_STATUS"
         }
@@ -168,14 +169,21 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
         val metrics = resources.displayMetrics
         val width = metrics.widthPixels
         val height = metrics.heightPixels
+
+
+
+
         val dialog = Dialog(this)
         dialog.setContentView(R.layout.dialog_filter_detail)
         dialog.setCancelable(false)
+        dialog.window?.attributes?.windowAnimations = R.style.DialogAnimation
 
          dialog.window?.setLayout(
             ((6.3 * width) / 7).toInt(),
           ViewGroup.LayoutParams.WRAP_CONTENT
         )
+
+
 
         dialog.close_detail.setOnClickListener { dialog.dismiss() }
 
@@ -185,6 +193,8 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
             if (k % 2 != 0) {
                 arrayOf(dialog.passage_short, dialog.img_showMore_down).forEach { it.visibility = View.GONE }
                 arrayOf(dialog.passage_long, dialog.img_showMore_up).forEach { it.visibility = View.VISIBLE }
+
+
             } else {
                 arrayOf(dialog.passage_long, dialog.img_showMore_up).forEach { it.visibility = View.GONE }
                 arrayOf(dialog.passage_short, dialog.img_showMore_down).forEach { it.visibility = View.VISIBLE }
@@ -192,8 +202,6 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
 //            var n =  (300 * Resources.getSystem().displayMetrics.density).toInt()
 //            dialog.scroll.scrollTo(0, n)
         }
-
-
 
 
 
