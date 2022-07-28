@@ -193,7 +193,8 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener{
             if (k % 2 != 0) {
                 arrayOf(dialog.passage_short, dialog.img_showMore_down).forEach { it.visibility = View.GONE }
                 arrayOf(dialog.passage_long, dialog.img_showMore_up).forEach { it.visibility = View.VISIBLE }
-
+                
+                dialog.scroll.post { dialog.scroll.fullScroll(View.FOCUS_DOWN) }
 
             } else {
                 arrayOf(dialog.passage_long, dialog.img_showMore_up).forEach { it.visibility = View.GONE }
