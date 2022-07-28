@@ -247,13 +247,13 @@
                 android:gravity="center"
                 android:text="انجام میدم"
                 android:textColor="@color/white"
-                android:textSize="16dp" />
+                android:textSize="14dp" />
 
 
             <LinearLayout
                 android:id="@+id/linear_done_cancel"
                 android:layout_width="match_parent"
-                android:layout_height="54dp"
+                android:layout_height="52dp"
                 android:layout_below="@id/scroll"
                 android:layout_marginTop="26dp"
                 android:layout_marginBottom="20dp"
@@ -273,7 +273,7 @@
                     android:gravity="center_vertical|center_horizontal"
                     android:text="انجام شد"
                     android:textColor="@color/white"
-                    android:textSize="16dp" />
+                    android:textSize="14dp" />
 
                 <TextView
                     android:id="@+id/cancel"
@@ -284,8 +284,8 @@
                     android:fontFamily="@font/iran_sans"
                     android:gravity="center"
                     android:text="انصراف"
-                    android:textColor="@color/blue_light"
-                    android:textSize="16dp" />
+                    android:textColor="?colorPrimaryVariant"
+                    android:textSize="14dp" />
 
             </LinearLayout>
         </LinearLayout>
