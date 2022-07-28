@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="@drawable/item_border_dialog"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="?cardElevation">
+
+<RelativeLayout
+    android:background="@null"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -17,7 +26,7 @@
         android:backgroundTint="@color/text_hint"
         android:fontFamily="@font/iran_sans"
         android:hint="کد تراکنش"
-        android:textColor="@color/text_main"
+        android:textColor="?android:textColorPrimary"
         android:textColorHint="@color/text_hint"
         android:textSize="16dp" />
 
@@ -43,3 +52,4 @@
 
 
 </RelativeLayout>
+</androidx.cardview.widget.CardView>

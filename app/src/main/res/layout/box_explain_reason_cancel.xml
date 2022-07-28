@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:paddingHorizontal="20dp"
+    android:paddingBottom="24dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/format_align_right_ic"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/iran_sans"
+        android:text="توضیحات"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="14dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/tt"
+        android:background="@drawable/item_border_et_explain"
+        android:backgroundTint="@null"
+        android:fontFamily="@font/iran_sans"
+        android:gravity="top"
+        android:padding="5dp"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="14dp" />
+
+</RelativeLayout>
