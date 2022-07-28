@@ -36,15 +36,6 @@ class LoginActivity : AppCompatActivity() {
         lunchForgetPass()
         countDownTimer()
 
-        switch_test.setOnCheckedChangeListener { compoundButton, b ->
-            if (switch_test.isChecked){
-                toast("on")
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            }else {
-                toast("off")
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            }
-        }
     }
 
 
@@ -63,7 +54,7 @@ class LoginActivity : AppCompatActivity() {
             var transition: Transition
             if (img_phone.isVisible) {
                 transition = Slide(Gravity.END)
-                transition.duration = 2000
+                transition.duration = 600
                 TransitionManager.beginDelayedTransition(relative, transition)
                 arrayOf(
                     tv_enterYourPhone,
@@ -74,7 +65,7 @@ class LoginActivity : AppCompatActivity() {
             }
             if (img_phone.isGone) {
                 transition = Fade()
-                transition.duration = 2000
+                transition.duration = 600
                 TransitionManager.beginDelayedTransition(relative, transition)
                 in_pass.visibility = View.VISIBLE
             }
