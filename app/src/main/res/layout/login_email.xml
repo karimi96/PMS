@@ -90,16 +90,6 @@
         app:layout_constraintTop_toTopOf="@+id/guideline11"
         tools:layout_editor_absoluteX="35dp" />
 
-    <Switch
-        android:id="@+id/switch_test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nextPhone" />
-
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
