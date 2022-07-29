@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
@@ -16,6 +17,9 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.karimi.pms.R
 import com.karimi.pms.adapter.FilterAdapter
 import com.karimi.pms.adapter.RequestAdapter
+import com.karimi.pms.api.ApiClient
+import com.karimi.pms.api.ApiService
+import com.karimi.pms.modal.Data
 import com.karimi.pms.modal.Request
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.bottom_sheet_filter.*
@@ -33,6 +37,9 @@ import org.osmdroid.tileprovider.tilesource.TileSourceFactory
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.CustomZoomButtonsController
 import org.osmdroid.views.overlay.Marker
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class HomeActivity : AppCompatActivity(), RequestAdapter.Listener, FilterAdapter.Listener {
     var listRequest: ArrayList<Request> = ArrayList()
@@ -47,7 +54,8 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener, FilterAdapter
         setContentView(R.layout.activity_home)
 
         checkTheme()
-        initRecyclerHome()
+//        initRecyclerHome()
+        testSever()
         initBottomSheetSitting()
         initBottomSheetFiltering()
 
@@ -56,20 +64,31 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener, FilterAdapter
 
     private fun initRecyclerHome() {
         initListAdapter()
-        adapter = RequestAdapter(listRequest, applicationContext, this)
-        recycler.adapter = adapter
+//        adapter = RequestAdapter(listRequest, applicationContext, this)
+//        recycler.adapter = adapter
+    }
+
+
+    private fun testSever(){
+        var apiService = ApiClient.getClient()?.create(ApiService::class.java)
+        val getApiPost = apiService?.getPost()
+        getApiPost?.enqueue(object : Callback<Data> {
+            override fun onResponse(call: Call<Data>, response: Response<Data>) {
+//                Log.e("qqq", "onResponse: "+response.body().ok);
+                adapter = RequestAdapter(response.body()?.result!!, applicationContext, this@HomeActivity)
+                recycler.adapter = adapter
+//                recyclerView.setAdapter(AdapterSearch(getContext(), response.body().result))
+            }
+
+            override fun onFailure(call: Call<Data>, t: Throwable) {
+                Log.e("qqqq", "onFailure: ", t)
+            }
+        })
     }
 
 
     private fun initListAdapter() {
-        listRequest.add(
-            Request(
-                "رفع خرابی",
-                "15 خرداد کوچه 39 15 خرداد کوچه 39 15 خرداد کوچه 9",
-                "1401/03/28",
-                "فوری"
-            )
-        )
+        listRequest.add(Request("رفع خرابی", "15 خرداد کوچه 39 15 خرداد کوچه 39 15 خرداد کوچه 9", "1401/03/28", "فوری"))
         listRequest.add(Request("رفع خرابی", "15 خرداد کوچه 39", "1401/03/28", "فوری"))
         listRequest.add(Request("نصب", "15 خرداد کوچه 39", "1401/03/28", "امروز"))
         listRequest.add(Request("نصب", "15 خرداد کوچه 39", "1401/03/28", "امروز"))
@@ -138,16 +157,6 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener, FilterAdapter
             set(value) = preferences.edit().putInt(DARK_STATUS, value).apply()
 
     }
-
-
-//    private fun initRecyclerFilter(): FilterAdapter {
-//        var list = ArrayList<String>()
-//        list.add("نصب")
-//        list.add("جمع اوری")
-//        list.add("بازدید دوره")
-//        list.add("رفع خرابی")
-//        return FilterAdapter(list, applicationContext , this)
-//    }
 
 
     private fun initBottomSheetFiltering() {

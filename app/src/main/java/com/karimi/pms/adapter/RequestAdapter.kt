@@ -13,14 +13,15 @@ import androidx.transition.Slide
 import androidx.transition.Transition
 import androidx.transition.TransitionManager
 import com.karimi.pms.R
+import com.karimi.pms.modal.Post
 import com.karimi.pms.modal.Request
 import kotlinx.android.synthetic.main.dialog_filter_detail.*
 import kotlinx.android.synthetic.main.list_item_home.view.*
 
-class RequestAdapter(list: ArrayList<Request>, context: Context, listener: Listener) :
+class RequestAdapter(list: ArrayList<Post>, context: Context, listener: Listener) :
     RecyclerView.Adapter<RequestAdapter.MyViewHolder>() {
     var context: Context = context
-    private var list: ArrayList<Request> = list
+    private var list: ArrayList<Post> = list
     var listener: Listener = listener
 
 
@@ -55,30 +56,32 @@ class RequestAdapter(list: ArrayList<Request>, context: Context, listener: Liste
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         var request = list[position]
-        if (request.dayName == "فوری") {
-            arrayOf(
-                holder.date,
-                holder.dayName
-            ).forEach { it.setTextColor(Color.parseColor("#E4897B")) }
-            holder.circle.setImageDrawable(context.getDrawable(R.drawable.circle_red))
-            holder.place.setImageDrawable(context.getDrawable(R.drawable.place_red_ic))
-            holder.cardView.foreground = context.getDrawable(R.drawable.item_border_red)
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                holder.cardView.outlineSpotShadowColor = Color.parseColor("#E4897B")
-            }
-        } else if (request.dayName == "امروز") {
-            holder.circle.setImageDrawable(context.getDrawable(R.drawable.circle_blue))
-            arrayOf(
-                holder.date,
-                holder.dayName
-            ).forEach { it.setTextColor(context.getColor(R.color.blue_light)) }
-            holder.place.setImageDrawable(context.getDrawable(R.drawable.place_blue_ic))
-        }
+//        if (request.dayName == "فوری") {
+//            arrayOf(
+//                holder.date,
+//                holder.dayName
+//            ).forEach { it.setTextColor(Color.parseColor("#E4897B")) }
+//            holder.circle.setImageDrawable(context.getDrawable(R.drawable.circle_red))
+//            holder.place.setImageDrawable(context.getDrawable(R.drawable.place_red_ic))
+//            holder.cardView.foreground = context.getDrawable(R.drawable.item_border_red)
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+//                holder.cardView.outlineSpotShadowColor = Color.parseColor("#E4897B")
+//            }
+//        } else if (request.dayName == "امروز") {
+//            holder.circle.setImageDrawable(context.getDrawable(R.drawable.circle_blue))
+//            arrayOf(
+//                holder.date,
+//                holder.dayName
+//            ).forEach { it.setTextColor(context.getColor(R.color.blue_light)) }
+//            holder.place.setImageDrawable(context.getDrawable(R.drawable.place_blue_ic))
+//        }
 
-        holder.title.text = request.title
-        holder.date.text = request.date
-        holder.address.text = request.address
-        holder.dayName.text = request.dayName
+//        holder.title.text = request.title
+//        holder.date.text = request.date
+//        holder.address.text = request.address
+//        holder.dayName.text = request.dayName
+
+        holder.title.text = list[position].title
     }
 
     override fun getItemCount(): Int {
