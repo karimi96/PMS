@@ -1,10 +1,7 @@
 package com.karimi.pms.activity
 
-import android.annotation.SuppressLint
 import android.app.Dialog
-import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
@@ -12,14 +9,11 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.preference.PreferenceManager
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.karimi.pms.R
 import com.karimi.pms.adapter.FilterAdapter
 import com.karimi.pms.adapter.RequestAdapter
-import com.karimi.pms.api.ApiClient
-import com.karimi.pms.api.ApiService
-import com.karimi.pms.modal.Data
+import com.karimi.pms.helper.Session
 import com.karimi.pms.modal.Request
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.bottom_sheet_filter.*
@@ -37,9 +31,6 @@ import org.osmdroid.tileprovider.tilesource.TileSourceFactory
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.CustomZoomButtonsController
 import org.osmdroid.views.overlay.Marker
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class HomeActivity : AppCompatActivity(), RequestAdapter.Listener, FilterAdapter.Listener {
     var listRequest: ArrayList<Request> = ArrayList()
@@ -54,8 +45,8 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener, FilterAdapter
         setContentView(R.layout.activity_home)
 
         checkTheme()
-//        initRecyclerHome()
-        testSever()
+        initRecyclerHome()
+//        testSever()
         initBottomSheetSitting()
         initBottomSheetFiltering()
 
@@ -64,12 +55,12 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener, FilterAdapter
 
     private fun initRecyclerHome() {
         initListAdapter()
-//        adapter = RequestAdapter(listRequest, applicationContext, this)
-//        recycler.adapter = adapter
+        adapter = RequestAdapter(listRequest, applicationContext, this)
+        recycler.adapter = adapter
     }
 
 
-    private fun testSever(){
+   /* private fun testSever(){
         var apiService = ApiClient.getClient()?.create(ApiService::class.java)
         val getApiPost = apiService?.getPost()
         getApiPost?.enqueue(object : Callback<Data> {
@@ -84,7 +75,7 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener, FilterAdapter
                 Log.e("qqqq", "onFailure: ", t)
             }
         })
-    }
+    }*/
 
 
     private fun initListAdapter() {
@@ -103,16 +94,13 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener, FilterAdapter
     }
 
 
-    @SuppressLint("ResourceAsColor")
     private fun initBottomSheetSitting() {
         setting_slider.setOnClickListener {
             val bsh = BottomSheetDialog(this, R.style.BottomSheetDialogTheme)
-//            val view = layoutI
-//            nflater.inflate(R.layout.bottom_sheet_setting, null)
             bsh.setContentView(R.layout.bottom_sheet_setting)
 
             bsh.switch_nightMode.setOnCheckedChangeListener { compoundButton, b -> initSwitch(bsh) }
-            if (MyPreferences(this).darkMode == 1) bsh.switch_nightMode.isChecked = true
+            if (Session.getInstance().getInt("darkMode") == 1 ) bsh.switch_nightMode.isChecked = true
 
             bsh.exitAccount.setOnClickListener { finishAffinity() }
             bsh.show()
@@ -123,39 +111,19 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener, FilterAdapter
     private fun initSwitch(bsh: BottomSheetDialog) {
         if (bsh.switch_nightMode.isChecked) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            MyPreferences(this).darkMode = 1
-            delegate.applyDayNight()
+            Session.getInstance().putExtra("darkMode",1)
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            MyPreferences(this).darkMode = 2
-            delegate.applyDayNight()
+            Session.getInstance().putExtra("darkMode",2)
         }
     }
 
 
-    private fun checkTheme() {
-        when (MyPreferences(this).darkMode) {
-            1 -> {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                delegate.applyDayNight()
-            }
-            2 -> {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-                delegate.applyDayNight()
-            }
+    private fun checkTheme(){
+        when(Session.getInstance().getInt("darkMode")){
+            1 ->   AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            2 ->   AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         }
-    }
-
-
-    class MyPreferences(context: Context?) {
-        companion object {
-            private const val DARK_STATUS = "io.github.manuelernesto.DARK_STATUS"
-        }
-
-        private val preferences = PreferenceManager.getDefaultSharedPreferences(context)
-        var darkMode = preferences.getInt(DARK_STATUS, 0)
-            set(value) = preferences.edit().putInt(DARK_STATUS, value).apply()
-
     }
 
 
