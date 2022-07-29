@@ -82,7 +82,7 @@
         android:layout_marginHorizontal="35dp"
         android:background="@drawable/item_btn_background"
         android:gravity="center"
-
+        android:backgroundTint="@null"
         android:text="ادامه"
         android:textColor="@color/white"
         android:textSize="16dp"
