@@ -8,4 +8,12 @@
         <item>موارد دیگر..</item>
     </string-array>
 
+
+    <string-array name="listOfFilter">
+        <item>نصب</item>
+        <item>جمع اوری</item>
+        <item>بازدید دوره</item>
+        <item>رفع خرابی</item>
+    </string-array>
+
 </resources>

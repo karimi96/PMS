@@ -34,9 +34,10 @@ import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.CustomZoomButtonsController
 import org.osmdroid.views.overlay.Marker
 
-class HomeActivity : AppCompatActivity(), RequestAdapter.Listener {
+class HomeActivity : AppCompatActivity(), RequestAdapter.Listener, FilterAdapter.Listener {
     var listRequest: ArrayList<Request> = ArrayList()
     private lateinit var adapter: RequestAdapter
+    private var bottomSheetFiltering: BottomSheetDialog? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,7 +50,6 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener {
         initRecyclerHome()
         initBottomSheetSitting()
         initBottomSheetFiltering()
-
 
     }
 
@@ -106,7 +106,6 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
             MyPreferences(this).darkMode = 1
             delegate.applyDayNight()
-//
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             MyPreferences(this).darkMode = 2
@@ -135,31 +134,30 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener {
         }
 
         private val preferences = PreferenceManager.getDefaultSharedPreferences(context)
-
         var darkMode = preferences.getInt(DARK_STATUS, 0)
             set(value) = preferences.edit().putInt(DARK_STATUS, value).apply()
 
     }
 
 
-    private fun initRecyclerFilter(): FilterAdapter {
-        var list = ArrayList<String>()
-        list.add("نصب")
-        list.add("جمع اوری")
-        list.add("بازدید دوره")
-        list.add("رفع خرابی")
-        return FilterAdapter(list, applicationContext)
-    }
+//    private fun initRecyclerFilter(): FilterAdapter {
+//        var list = ArrayList<String>()
+//        list.add("نصب")
+//        list.add("جمع اوری")
+//        list.add("بازدید دوره")
+//        list.add("رفع خرابی")
+//        return FilterAdapter(list, applicationContext , this)
+//    }
 
 
     private fun initBottomSheetFiltering() {
         filtering.setOnClickListener {
-            val d = BottomSheetDialog(this, R.style.BottomSheetDialogTheme)
-            d.setContentView(R.layout.bottom_sheet_filter)
-            d.show()
-            d.recyler_filter.adapter = initRecyclerFilter()
-//             arrayOf(d.relative_installation, d.relative_Collect, d.relative_Visit, d.relative_FixedCrash).forEach {
-//                 it.setOnClickListener {  } }
+            bottomSheetFiltering = BottomSheetDialog(this, R.style.BottomSheetDialogTheme)
+            bottomSheetFiltering!!.setContentView(R.layout.bottom_sheet_filter)
+            bottomSheetFiltering!!.show()
+            val list = resources.getStringArray(R.array.listOfFilter)
+            bottomSheetFiltering!!.recycler_filter.adapter =
+                FilterAdapter(list.toList(), applicationContext, this)
         }
     }
 
@@ -176,10 +174,7 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener {
         dialog.window?.setBackgroundDrawableResource(R.drawable.item_border_dialog)
         dialog.show()
 
-        dialog.window?.setLayout(
-            ((6.3 * width) / 7).toInt(),
-            ViewGroup.LayoutParams.WRAP_CONTENT
-        )
+        dialog.window?.setLayout(((6.3 * width) / 7).toInt(), ViewGroup.LayoutParams.WRAP_CONTENT)
 
 
         lunchMap(dialog)
@@ -192,6 +187,7 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener {
                 arrayOf(dialog.passage_short, dialog.img_showMore_down).forEach {
                     it.visibility = View.GONE
                 }
+
                 arrayOf(dialog.passage_long, dialog.img_showMore_up).forEach {
                     it.visibility = View.VISIBLE
                 }
@@ -202,12 +198,11 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener {
                 arrayOf(dialog.passage_long, dialog.img_showMore_up).forEach {
                     it.visibility = View.GONE
                 }
+
                 arrayOf(dialog.passage_short, dialog.img_showMore_down).forEach {
                     it.visibility = View.VISIBLE
                 }
             }
-//            var n =  (300 * Resources.getSystem().displayMetrics.density).toInt()
-//            dialog.scroll.scrollTo(0, n)
         }
 
 
@@ -226,7 +221,6 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener {
             dialog.dismiss()
             initDialogReasonOfCancel()
         }
-
 
         dialog.tv_done.setOnClickListener {
             dialog.dismiss()
@@ -318,6 +312,12 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener {
             d.dismiss()
         }
 
+    }
+
+
+    override fun dismissDialog(s: String) {
+        toast(s)
+//        bottomSheetFiltering?.dismiss()
     }
 }
 
