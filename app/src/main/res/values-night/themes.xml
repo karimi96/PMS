@@ -39,7 +39,7 @@
         <item name="colorOnSecondary">@color/white</item>
         <item name="android:statusBarColor" tools:targetApi="l">#0D0D0D</item>
 
-        <item name="android:background">#0D0D0D</item>
+<!--        <item name="android:background">#0D0D0D</item>-->
         <item name="background">@color/blue_light</item>
         <item name="android:colorBackground">#0D0D0D</item>
 
