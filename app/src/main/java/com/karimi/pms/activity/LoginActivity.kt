@@ -3,9 +3,12 @@ package com.karimi.pms.activity
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.Gravity
 import android.view.View
 import android.view.animation.AnimationUtils
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
@@ -20,6 +23,7 @@ import kotlinx.android.synthetic.main.login_email.*
 import kotlinx.android.synthetic.main.login_pass.*
 import kotlinx.android.synthetic.main.verification.*
 
+
 class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +37,31 @@ class LoginActivity : AppCompatActivity() {
         lunchValidation()
         lunchForgetPass()
         countDownTimer()
+        initEditTextVerification()
     }
+
+    private fun textWatcher(et_1 : EditText, et_2 : EditText){
+        et_1.addTextChangedListener(object : TextWatcher {
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                if (et_1.text.toString().length === 1) { et_2.requestFocus() }
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun afterTextChanged(p0: Editable?) {
+            }
+        })
+    }
+
+
+    private fun initEditTextVerification(){
+        textWatcher(et1,et2)
+        textWatcher(et2,et3)
+        textWatcher(et3,et4)
+        textWatcher(et4,et5)
+    }
+
+
 
 
     private fun lunchPhonePage() {

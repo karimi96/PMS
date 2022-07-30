@@ -44,15 +44,17 @@
         app:layout_constraintVertical_bias="0.39"
         tools:layout_editor_absoluteX="30dp">
 
-        <EditText style="@style/CustomEditText" />
 
-        <EditText style="@style/CustomEditText" />
+        <EditText android:id="@+id/et5" style="@style/CustomEditText" />
 
-        <EditText style="@style/CustomEditText" />
+        <EditText android:id="@+id/et4" style="@style/CustomEditText" />
 
-        <EditText style="@style/CustomEditText" />
+        <EditText android:id="@+id/et3" style="@style/CustomEditText" />
 
-        <EditText style="@style/CustomEditText" />
+        <EditText android:id="@+id/et2" style="@style/CustomEditText" />
+
+        <EditText android:id="@+id/et1" style="@style/CustomEditText" />
+
 
     </LinearLayout>
 

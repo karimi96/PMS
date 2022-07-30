@@ -15,5 +15,4 @@ class Device {
     var location_lat: String? = null
     var location_long: String? = null
     var status: String? = null
-
 }
