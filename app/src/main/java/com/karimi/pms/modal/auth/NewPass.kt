@@ -1,6 +1,6 @@
 package com.karimi.pms.modal.auth
 
-class Login {
+class NewPass {
     var phone: String? = null
     var password: String? = null
 }
