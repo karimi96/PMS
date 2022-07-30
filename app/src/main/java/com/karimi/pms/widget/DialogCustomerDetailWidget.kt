@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.RelativeLayout
 import com.karimi.pms.R
 import com.karimi.pms.adapter.RequestAdapter
-import com.karimi.pms.modal.Request
 import kotlinx.android.synthetic.main.box_chat.*
 import kotlinx.android.synthetic.main.dialog_customer_detail.*
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory

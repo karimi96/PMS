@@ -1,4 +1,4 @@
-package com.karimi.pms.modal
+package com.karimi.pms.modal.test
 
 class Post {
     var id: String? = null

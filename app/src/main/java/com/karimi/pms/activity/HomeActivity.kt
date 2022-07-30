@@ -13,7 +13,7 @@ import com.karimi.pms.adapter.FilterAdapter
 import com.karimi.pms.adapter.RequestAdapter
 import com.karimi.pms.helper.Session
 import com.karimi.pms.helper.Tools
-import com.karimi.pms.modal.Request
+import com.karimi.pms.modal.request.Request
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.bottom_sheet_filter.*
 import kotlinx.android.synthetic.main.bottom_sheet_setting.*

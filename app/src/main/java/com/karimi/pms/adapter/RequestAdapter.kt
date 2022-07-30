@@ -9,10 +9,10 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.karimi.pms.R
-import com.karimi.pms.modal.Request
+import com.karimi.pms.modal.request.Request
 import kotlinx.android.synthetic.main.list_item_home.view.*
 
-class RequestAdapter(list: ArrayList<Request>, context: Context , listener: Listener) :
+class RequestAdapter(list: ArrayList<Request>, context: Context, listener: Listener) :
     RecyclerView.Adapter<RequestAdapter.MyViewHolder>() {
     var context: Context = context
     private var list: ArrayList<Request> = list

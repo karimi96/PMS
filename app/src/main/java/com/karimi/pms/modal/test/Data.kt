@@ -1,4 +1,4 @@
-package com.karimi.pms.modal
+package com.karimi.pms.modal.test
 
 import com.google.gson.annotations.SerializedName
 
