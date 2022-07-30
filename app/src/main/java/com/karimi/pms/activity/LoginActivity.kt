@@ -17,6 +17,7 @@ import androidx.transition.Transition
 import androidx.transition.TransitionManager
 import com.karimi.pms.R
 import com.karimi.pms.helper.Session
+import com.karimi.pms.helper.Tools
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.bottom_sheet_setting.*
 import kotlinx.android.synthetic.main.forget_pass.*
@@ -30,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        checkTheme()
+        Tools.checkTheme()
         lunchPhonePage()
         lunchPasswordPage()
         lunchHomeActivity()
@@ -40,16 +41,8 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    private fun checkTheme(){
-        when(Session.getInstance().getInt("darkMode")){
-            1 ->   AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            2 ->   AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-        }
-    }
-
 
     private fun lunchPhonePage() {
-//        val slideAnimation = AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left)
         val slideAnimation = AnimationUtils.loadAnimation(this, R.anim.bottom_to_up)
         slideAnimation.duration = 900
         img_phone.startAnimation(slideAnimation)

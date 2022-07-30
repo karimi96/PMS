@@ -14,6 +14,7 @@ import com.karimi.pms.R
 import com.karimi.pms.adapter.FilterAdapter
 import com.karimi.pms.adapter.RequestAdapter
 import com.karimi.pms.helper.Session
+import com.karimi.pms.helper.Tools
 import com.karimi.pms.modal.Request
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.bottom_sheet_filter.*
@@ -40,11 +41,10 @@ class HomeActivity : AppCompatActivity(), FilterAdapter.Listener, RequestAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Configuration.getInstance()
-            .load(this, android.preference.PreferenceManager.getDefaultSharedPreferences(this))
+        Configuration.getInstance().load(this, android.preference.PreferenceManager.getDefaultSharedPreferences(this))
         setContentView(R.layout.activity_home)
 
-        checkTheme()
+        Tools.checkTheme()
         initRecyclerHome()
 //        testSever()
         initBottomSheetSitting()
@@ -79,14 +79,7 @@ class HomeActivity : AppCompatActivity(), FilterAdapter.Listener, RequestAdapter
 
 
     private fun initListAdapter() {
-        listRequest.add(
-            Request(
-                "رفع خرابی",
-                "15 خرداد کوچه 39 15 خرداد کوچه 39 15 خرداد کوچه 9",
-                "1401/03/28",
-                "فوری"
-            )
-        )
+        listRequest.add(Request("رفع خرابی", "15 خرداد کوچه 39 15 خرداد کوچه 39 15 خرداد کوچه 9", "1401/03/28", "فوری" ))
         listRequest.add(Request("رفع خرابی", "15 خرداد کوچه 39", "1401/03/28", "فوری"))
         listRequest.add(Request("نصب", "15 خرداد کوچه 39", "1401/03/28", "امروز"))
         listRequest.add(Request("نصب", "15 خرداد کوچه 39", "1401/03/28", "امروز"))
@@ -122,14 +115,6 @@ class HomeActivity : AppCompatActivity(), FilterAdapter.Listener, RequestAdapter
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             Session.getInstance().putExtra("darkMode", 2)
-        }
-    }
-
-
-    private fun checkTheme() {
-        when (Session.getInstance().getInt("darkMode")) {
-            1 -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            2 -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         }
     }
 
@@ -219,6 +204,7 @@ class HomeActivity : AppCompatActivity(), FilterAdapter.Listener, RequestAdapter
             initDialogSaveActivity()
         }
     }
+
 
     private fun lunchMap(d: Dialog) {
         d.map.setTileSource(TileSourceFactory.MAPNIK)

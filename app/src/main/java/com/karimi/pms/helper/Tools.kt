@@ -1,8 +1,16 @@
 package com.karimi.pms.helper
 
-import android.os.CountDownTimer
+import androidx.appcompat.app.AppCompatDelegate
 
-class Tools {
+object Tools {
+
+     fun checkTheme() {
+        when (Session.getInstance().getInt("darkMode")) {
+            1 -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            2 -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
+    }
+
 
 
 }
