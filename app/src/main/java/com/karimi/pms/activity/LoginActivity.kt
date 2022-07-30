@@ -49,8 +49,9 @@ class LoginActivity : AppCompatActivity() {
 
 
     private fun lunchPhonePage() {
-        val slideAnimation = AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left)
-        slideAnimation.duration = 1000
+//        val slideAnimation = AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left)
+        val slideAnimation = AnimationUtils.loadAnimation(this, R.anim.bottom_to_up)
+        slideAnimation.duration = 900
         img_phone.startAnimation(slideAnimation)
         tv_enterYourPhone.startAnimation(slideAnimation)
         et_phone.startAnimation(slideAnimation)
@@ -60,23 +61,23 @@ class LoginActivity : AppCompatActivity() {
 
     private fun lunchPasswordPage() {
         tv_nextPhone.setOnClickListener {
-            var transition: Transition
             if (img_phone.isVisible) {
+                var transition: Transition
                 transition = Slide(Gravity.END)
-                transition.duration = 600
+                transition.duration = 1000
                 TransitionManager.beginDelayedTransition(relative, transition)
                 arrayOf(
                     tv_enterYourPhone,
-                    img_phone,
                     et_phone,
+                    img_phone,
                     tv_nextPhone
                 ).forEach { it.visibility = View.GONE }
             }
             if (img_phone.isGone) {
-                transition = Fade()
-                transition.duration = 600
-                TransitionManager.beginDelayedTransition(relative, transition)
+                val slideAnimation = AnimationUtils.loadAnimation(this,android.R.anim.fade_in)
+                slideAnimation.duration = 1000
                 in_pass.visibility = View.VISIBLE
+                in_pass.startAnimation(slideAnimation)
             }
         }
     }
@@ -87,14 +88,14 @@ class LoginActivity : AppCompatActivity() {
             var transition: Transition
             if (img_loginPass.isVisible) {
                 transition = Slide(Gravity.BOTTOM)
-                transition.duration = 2000
+                transition.duration = 1000
                 TransitionManager.beginDelayedTransition(relative, transition)
                 in_pass.visibility = View.GONE
             }
             var transition2: Transition
             if (in_pass.isGone) {
                 transition2 = Slide(Gravity.BOTTOM)
-                transition2.duration = 2000
+                transition2.duration = 1000
                 TransitionManager.beginDelayedTransition(relative, transition2)
                 in_verification.visibility = View.VISIBLE
             }
@@ -107,14 +108,14 @@ class LoginActivity : AppCompatActivity() {
             if (img_verification.isVisible) {
                 var transition: Transition
                 transition = Slide(Gravity.TOP)
-                transition.duration = 2000
+                transition.duration = 1000
                 TransitionManager.beginDelayedTransition(relative, transition)
                 img_verification.visibility = View.GONE
             }
             if (tv_interYourCode.isVisible) {
                 var transition1: Transition
                 transition1 = Slide(Gravity.TOP)
-                transition1.duration = 2000
+                transition1.duration = 1000
                 TransitionManager.beginDelayedTransition(relative, transition1)
                 tv_interYourCode.visibility = View.GONE
                 linear_verification.visibility = View.GONE
@@ -126,7 +127,7 @@ class LoginActivity : AppCompatActivity() {
             if (img_verification.isGone) {
                 var transition: Transition
                 transition = Slide(Gravity.TOP)
-                transition.duration = 2000
+                transition.duration = 1000
                 TransitionManager.beginDelayedTransition(relative, transition)
                 arrayOf(
                     in_forgetPass,
@@ -142,13 +143,8 @@ class LoginActivity : AppCompatActivity() {
 
     private fun lunchHomeActivity() {
         tv_nextPass.setOnClickListener {
-            startActivity(
-                Intent(
-                    baseContext,
-                    HomeActivity::class.java
-                )
-            )
-            in_pass.visibility = View.GONE
+            startActivity(Intent(baseContext, HomeActivity::class.java))
+            finish()
         }
     }
 
