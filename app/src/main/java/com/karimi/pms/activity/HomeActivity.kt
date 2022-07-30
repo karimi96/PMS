@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -223,11 +222,6 @@ class HomeActivity : AppCompatActivity(), FilterAdapter.Listener, RequestAdapter
         d.map.overlays.add(marker)
         d.map.invalidate()
     }
-
-
-//    private fun toast(text: String) {
-//        Toast.makeText(applicationContext, text, Toast.LENGTH_SHORT).show()
-//    }
 
 
     private fun initDialogReasonOfCancel() {
