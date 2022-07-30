@@ -43,7 +43,7 @@
 
 <!--        <item name="android:background">@color/white</item>-->
         <item name="background">@color/blue_light</item>
-        <item name="android:colorBackground">@color/white</item>
+        <item name="android:colorBackground">?colorOnPrimary</item>
 
 
         <item name="android:textColorPrimary">@color/text_main</item>
@@ -113,7 +113,7 @@
         <item name="android:layout_height">5dp</item>
         <item name="android:layout_marginEnd">4.3dp</item>
         <item name="android:layout_marginBottom">5.5dp</item>
-        <item name="android:background">?android:colorBackground</item>
+        <item name="android:background">?colorOnPrimary</item>
         <item name="android:backgroundTint">@null</item>
     </style>
 

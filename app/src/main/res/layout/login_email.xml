@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraintLayout1"
     android:layout_width="match_parent"
+    android:background="?colorOnPrimary"
     android:layout_height="match_parent"
-    android:backgroundTint="@null"
     android:focusableInTouchMode="true">
 
 
@@ -13,7 +13,6 @@
         android:id="@+id/img_phone"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:padding="15dp"
         android:src="@drawable/pic_login_email"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
@@ -94,7 +93,7 @@
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         style="@style/CustomGuideline"
-        app:layout_constraintGuide_percent="0.43" />
+        app:layout_constraintGuide_percent="0.43091655" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
@@ -104,11 +103,11 @@
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline9"
         style="@style/CustomGuideline"
-        app:layout_constraintGuide_percent="0.07" />
+        app:layout_constraintGuide_percent="0.04103967" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline11"
         style="@style/CustomGuideline"
-        app:layout_constraintGuide_percent="0.7305062" />
+        app:layout_constraintGuide_percent="0.77" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
