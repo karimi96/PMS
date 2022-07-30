@@ -3,32 +3,35 @@ package com.karimi.pms.adapter
 import android.content.Context
 import android.graphics.Color
 import android.os.Build
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
-import androidx.transition.Slide
-import androidx.transition.Transition
-import androidx.transition.TransitionManager
 import com.karimi.pms.R
-import com.karimi.pms.modal.Post
 import com.karimi.pms.modal.Request
-import kotlinx.android.synthetic.main.dialog_filter_detail.*
 import kotlinx.android.synthetic.main.list_item_home.view.*
 
-class RequestAdapter(list: ArrayList<Request>, context: Context, listener: Listener) :
+class RequestAdapter(list: ArrayList<Request>, context: Context , listener: Listener) :
     RecyclerView.Adapter<RequestAdapter.MyViewHolder>() {
     var context: Context = context
     private var list: ArrayList<Request> = list
-//    private var list: ArrayList<Post> = list
+
+    //    private var list: ArrayList<Post> = list
     var listener: Listener = listener
 
 
     interface Listener {
-        fun showDialog()
+        fun showDialogCustomerDetail()
     }
+
+//    object ff {
+//        lateinit var n : Listener
+//        fun initTest(listener1: Listener)  {
+//            this.n = listener1
+//        }
+//
+//    }
 
 
 
@@ -43,7 +46,8 @@ class RequestAdapter(list: ArrayList<Request>, context: Context, listener: Liste
 
         init {
             itemView.setOnClickListener {
-                listener.showDialog() }
+                listener?.showDialogCustomerDetail()
+            }
         }
     }
 

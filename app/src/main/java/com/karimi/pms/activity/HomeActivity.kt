@@ -22,7 +22,7 @@ import kotlinx.android.synthetic.main.box_chat.*
 import kotlinx.android.synthetic.main.box_reason_c.*
 import kotlinx.android.synthetic.main.box_record_activity.*
 import kotlinx.android.synthetic.main.box_spinner.*
-import kotlinx.android.synthetic.main.dialog_filter_detail.*
+import kotlinx.android.synthetic.main.dialog_customer_detail.*
 import kotlinx.android.synthetic.main.dialog_reason_cansel.*
 import kotlinx.android.synthetic.main.dialog_save_activity.*
 import kotlinx.android.synthetic.main.toolbar.*
@@ -32,7 +32,7 @@ import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.CustomZoomButtonsController
 import org.osmdroid.views.overlay.Marker
 
-class HomeActivity : AppCompatActivity(), RequestAdapter.Listener, FilterAdapter.Listener {
+class HomeActivity : AppCompatActivity(), FilterAdapter.Listener, RequestAdapter.Listener {
     var listRequest: ArrayList<Request> = ArrayList()
     private lateinit var adapter: RequestAdapter
     private var bottomSheetFiltering: BottomSheetDialog? = null
@@ -60,26 +60,33 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener, FilterAdapter
     }
 
 
-   /* private fun testSever(){
-        var apiService = ApiClient.getClient()?.create(ApiService::class.java)
-        val getApiPost = apiService?.getPost()
-        getApiPost?.enqueue(object : Callback<Data> {
-            override fun onResponse(call: Call<Data>, response: Response<Data>) {
-//                Log.e("qqq", "onResponse: "+response.body().ok);
-                adapter = RequestAdapter(response.body()?.result!!, applicationContext, this@HomeActivity)
-                recycler.adapter = adapter
-//                recyclerView.setAdapter(AdapterSearch(getContext(), response.body().result))
-            }
+    /* private fun testSever(){
+         var apiService = ApiClient.getClient()?.create(ApiService::class.java)
+         val getApiPost = apiService?.getPost()
+         getApiPost?.enqueue(object : Callback<Data> {
+             override fun onResponse(call: Call<Data>, response: Response<Data>) {
+ //                Log.e("qqq", "onResponse: "+response.body().ok);
+                 adapter = RequestAdapter(response.body()?.result!!, applicationContext, this@HomeActivity)
+                 recycler.adapter = adapter
+ //                recyclerView.setAdapter(AdapterSearch(getContext(), response.body().result))
+             }
 
-            override fun onFailure(call: Call<Data>, t: Throwable) {
-                Log.e("qqqq", "onFailure: ", t)
-            }
-        })
-    }*/
+             override fun onFailure(call: Call<Data>, t: Throwable) {
+                 Log.e("qqqq", "onFailure: ", t)
+             }
+         })
+     }*/
 
 
     private fun initListAdapter() {
-        listRequest.add(Request("رفع خرابی", "15 خرداد کوچه 39 15 خرداد کوچه 39 15 خرداد کوچه 9", "1401/03/28", "فوری"))
+        listRequest.add(
+            Request(
+                "رفع خرابی",
+                "15 خرداد کوچه 39 15 خرداد کوچه 39 15 خرداد کوچه 9",
+                "1401/03/28",
+                "فوری"
+            )
+        )
         listRequest.add(Request("رفع خرابی", "15 خرداد کوچه 39", "1401/03/28", "فوری"))
         listRequest.add(Request("نصب", "15 خرداد کوچه 39", "1401/03/28", "امروز"))
         listRequest.add(Request("نصب", "15 خرداد کوچه 39", "1401/03/28", "امروز"))
@@ -100,7 +107,7 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener, FilterAdapter
             bsh.setContentView(R.layout.bottom_sheet_setting)
 
             bsh.switch_nightMode.setOnCheckedChangeListener { compoundButton, b -> initSwitch(bsh) }
-            if (Session.getInstance().getInt("darkMode") == 1 ) bsh.switch_nightMode.isChecked = true
+            if (Session.getInstance().getInt("darkMode") == 1) bsh.switch_nightMode.isChecked = true
 
             bsh.exitAccount.setOnClickListener { finishAffinity() }
             bsh.show()
@@ -111,18 +118,18 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener, FilterAdapter
     private fun initSwitch(bsh: BottomSheetDialog) {
         if (bsh.switch_nightMode.isChecked) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            Session.getInstance().putExtra("darkMode",1)
+            Session.getInstance().putExtra("darkMode", 1)
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            Session.getInstance().putExtra("darkMode",2)
+            Session.getInstance().putExtra("darkMode", 2)
         }
     }
 
 
-    private fun checkTheme(){
-        when(Session.getInstance().getInt("darkMode")){
-            1 ->   AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            2 ->   AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+    private fun checkTheme() {
+        when (Session.getInstance().getInt("darkMode")) {
+            1 -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            2 -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         }
     }
 
@@ -139,7 +146,7 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener, FilterAdapter
     }
 
 
-    override fun showDialog() {
+    override fun showDialogCustomerDetail() {
         val metrics = resources.displayMetrics
         val width = metrics.widthPixels
         val height = metrics.heightPixels
@@ -183,15 +190,23 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener, FilterAdapter
         }
 
 
-
         dialog.tv_doing.setOnClickListener {
-            dialog.linear_done_cancel.visibility = View.VISIBLE
-            dialog.tv_doing.visibility = View.GONE
-            dialog.close_detail.visibility = View.GONE
-            dialog.posModel_t.visibility = View.VISIBLE
-            dialog.posModel.visibility = View.GONE
-            dialog.posIcon.visibility = View.GONE
+            arrayOf(dialog.linear_done_cancel, dialog.posModel_t).forEach {
+                it.visibility = View.VISIBLE
+            }
+            arrayOf(
+                dialog.tv_doing,
+                dialog.close_detail,
+                dialog.posModel,
+                dialog.posIcon
+            ).forEach { it.visibility = View.GONE }
             dialog.setCancelable(true)
+//            dialog.linear_done_cancel.visibility = View.VISIBLE
+//            dialog.tv_doing.visibility = View.GONE
+//            dialog.close_detail.visibility = View.GONE
+//            dialog.posModel_t.visibility = View.VISIBLE
+//            dialog.posModel.visibility = View.GONE
+//            dialog.posIcon.visibility = View.GONE
         }
 
         dialog.tv_cancel.setOnClickListener {
@@ -204,22 +219,6 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener, FilterAdapter
             initDialogSaveActivity()
         }
     }
-
-
-    private fun toast(text: String) {
-        Toast.makeText(applicationContext, text, Toast.LENGTH_SHORT).show()
-    }
-
-
-    fun layoutAnimationRecycler() {
-        val context = recycler.context
-        val layoutAnimationController =
-            AnimationUtils.loadLayoutAnimation(context, R.anim.layout_fall_down)
-        recycler.layoutAnimation = layoutAnimationController
-        recycler.adapter!!.notifyDataSetChanged()
-        recycler.scheduleLayoutAnimation()
-    }
-
 
     private fun lunchMap(d: Dialog) {
         d.map.setTileSource(TileSourceFactory.MAPNIK)
@@ -237,6 +236,21 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener, FilterAdapter
         marker.icon = getDrawable(R.drawable.ic_location)
         d.map.overlays.add(marker)
         d.map.invalidate()
+    }
+
+
+    private fun toast(text: String) {
+        Toast.makeText(applicationContext, text, Toast.LENGTH_SHORT).show()
+    }
+
+
+    fun layoutAnimationRecycler() {
+        val context = recycler.context
+        val layoutAnimationController =
+            AnimationUtils.loadLayoutAnimation(context, R.anim.layout_fall_down)
+        recycler.layoutAnimation = layoutAnimationController
+        recycler.adapter!!.notifyDataSetChanged()
+        recycler.scheduleLayoutAnimation()
     }
 
 
