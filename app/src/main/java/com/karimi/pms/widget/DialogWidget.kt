@@ -13,7 +13,7 @@ class DialogWidget(context: Context?, attrs: AttributeSet?) : RelativeLayout(con
     init {
 //        adapter = RequestAdapter(a,this.context )
 //        adapter.init(this)
-        inflate(context , R.layout.dialog_filter_detail , this)
+        inflate(context , R.layout.dialog_customer_detail , this)
     }
 
 //    override fun showDialog() {

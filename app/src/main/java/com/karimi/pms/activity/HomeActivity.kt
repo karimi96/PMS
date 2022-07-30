@@ -145,7 +145,7 @@ class HomeActivity : AppCompatActivity(), RequestAdapter.Listener, FilterAdapter
         val height = metrics.heightPixels
 
         val dialog = Dialog(this)
-        dialog.setContentView(R.layout.dialog_filter_detail)
+        dialog.setContentView(R.layout.dialog_customer_detail)
         dialog.setCancelable(false)
         dialog.window?.attributes?.windowAnimations = R.style.DialogAnimation
         dialog.window?.setBackgroundDrawableResource(R.drawable.item_border_dialog)
