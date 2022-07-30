@@ -4,7 +4,6 @@ import android.app.Dialog
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -57,6 +56,7 @@ class HomeActivity : AppCompatActivity(), FilterAdapter.Listener, RequestAdapter
         initListAdapter()
         adapter = RequestAdapter(listRequest, applicationContext, this)
         recycler.adapter = adapter
+        Tools.layoutAnimationRecycler(recycler)
     }
 
 
@@ -225,19 +225,9 @@ class HomeActivity : AppCompatActivity(), FilterAdapter.Listener, RequestAdapter
     }
 
 
-    private fun toast(text: String) {
-        Toast.makeText(applicationContext, text, Toast.LENGTH_SHORT).show()
-    }
-
-
-    fun layoutAnimationRecycler() {
-        val context = recycler.context
-        val layoutAnimationController =
-            AnimationUtils.loadLayoutAnimation(context, R.anim.layout_fall_down)
-        recycler.layoutAnimation = layoutAnimationController
-        recycler.adapter!!.notifyDataSetChanged()
-        recycler.scheduleLayoutAnimation()
-    }
+//    private fun toast(text: String) {
+//        Toast.makeText(applicationContext, text, Toast.LENGTH_SHORT).show()
+//    }
 
 
     private fun initDialogReasonOfCancel() {
@@ -254,7 +244,7 @@ class HomeActivity : AppCompatActivity(), FilterAdapter.Listener, RequestAdapter
 
         d.close_reason_cancel.setOnClickListener { d.dismiss() }
         d.send.setOnClickListener {
-            toast("با موفقیت ارسال شد")
+            Tools.toast(baseContext,"با موفقیت ارسال شد")
             d.dismiss()
         }
 
@@ -285,7 +275,7 @@ class HomeActivity : AppCompatActivity(), FilterAdapter.Listener, RequestAdapter
 
         d.close_save_activity.setOnClickListener { d.dismiss() }
         d.send_saveActivity.setOnClickListener {
-            toast("با موفقیت ارسال شد")
+            Tools.toast(baseContext,"با موفقیت ارسال شد")
             d.dismiss()
         }
 
@@ -293,7 +283,7 @@ class HomeActivity : AppCompatActivity(), FilterAdapter.Listener, RequestAdapter
 
 
     override fun dismissDialog(s: String) {
-        toast(s)
+        Tools.toast(baseContext,s)
 //        bottomSheetFiltering?.dismiss()
     }
 }
