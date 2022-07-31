@@ -24,8 +24,8 @@
         android:backgroundTint="@null"
         android:fontFamily="@font/iran_sans"
         android:gravity="top"
-        android:paddingVertical="5dp"
         android:paddingHorizontal="10dp"
+        android:paddingVertical="5dp"
         android:textColor="?android:textColorPrimary"
         android:textSize="14dp" />
 

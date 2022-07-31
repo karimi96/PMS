@@ -11,7 +11,7 @@
         android:id="@+id/relative_selected"
         android:layout_width="match_parent"
         android:layout_height="54dp"
-        android:background="?colorPrimary"
+        android:background="?android:solidColor"
         android:backgroundTint="@null"
         android:visibility="gone">
 

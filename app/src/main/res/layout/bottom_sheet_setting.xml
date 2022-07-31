@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:backgroundTint="@null"
     android:layout_height="400dp">
 
     <View
@@ -61,7 +62,7 @@
                 android:fontFamily="@font/iran_sans_fanum"
                 android:gravity="right"
                 android:text="09334659477"
-                android:textColor="?android:textColorPrimary"
+                android:textColor="?android:textColorSecondary"
                 android:textSize="12dp" />
 
         </LinearLayout>

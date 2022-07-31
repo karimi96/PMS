@@ -50,6 +50,7 @@
             android:fontFamily="@font/iran_sans"
             android:gravity="center"
             android:text="ارسال"
+            android:backgroundTint="@null"
             android:textColor="@color/white"
             android:textSize="14dp" />
 

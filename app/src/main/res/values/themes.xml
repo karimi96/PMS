@@ -33,7 +33,7 @@
 
     <style name="Custom.Them.Login" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimaryVariant">@color/blue_light</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorSecondary">@color/text_main</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
@@ -133,8 +133,11 @@
         <item name="colorSecondary">@color/blue_night</item>
         <item name="background">?background</item>
         <item name="android:textColor">?colorPrimaryVariant</item>
-        <item name="android:textColorPrimary">?android:textColorPrimary</item>
-        <item name="android:textColorSecondary">?android:textColorSecondary</item>
+        <item name="android:textColorPrimary">@color/text_main</item>
+        <item name="android:textColorSecondary">#83888C</item>
+
+        <item name="android:solidColor">#e8e8e8</item>
+<!--        <item name="colorPrimary">#F4F5F7</item>-->
 
         <!--        <item name="android:backgroundDimAmount">0.3</item>-->
         <!--        <item name="android:windowFrame">@null</item>-->
@@ -147,7 +150,7 @@
         <!--        <item name="colorOnBackground">@android:color/holo_blue_dark</item>-->
 
         <item name="backgroundColor">?android:textColorPrimary</item>
-        <item name="android:backgroundTint">?colorOnPrimary</item>
+<!--        <item name="android:backgroundTint">?colorOnPrimary</item>-->
         <item name="bottomSheetStyle">@style/BottomSheet</item>
     </style>
 

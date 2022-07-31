@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?colorOnPrimary"
     android:focusableInTouchMode="true">
 
     <ImageView
@@ -108,7 +109,7 @@
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline8"
         style="@style/CustomGuideline"
-        app:layout_constraintGuide_percent="0.04" />
+        app:layout_constraintGuide_percent="0.04103967" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

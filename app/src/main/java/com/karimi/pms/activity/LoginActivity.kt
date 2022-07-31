@@ -36,6 +36,7 @@ class LoginActivity : AppCompatActivity() {
         lunchHomeActivity()
         lunchValidation()
         lunchForgetPass()
+        lunchSignUpPage()
         countDownTimer()
         initEditTextVerification()
     }
@@ -80,12 +81,7 @@ class LoginActivity : AppCompatActivity() {
                 transition = Slide(Gravity.END)
                 transition.duration = 1000
                 TransitionManager.beginDelayedTransition(relative, transition)
-                arrayOf(
-                    tv_enterYourPhone,
-                    et_phone,
-                    img_phone,
-                    tv_nextPhone
-                ).forEach { it.visibility = View.GONE }
+                arrayOf(tv_enterYourPhone, et_phone, img_phone, tv_nextPhone, in_email).forEach { it.visibility = View.GONE }
             }
             if (img_phone.isGone) {
                 val slideAnimation = AnimationUtils.loadAnimation(this,android.R.anim.fade_in)
@@ -94,6 +90,11 @@ class LoginActivity : AppCompatActivity() {
                 in_pass.startAnimation(slideAnimation)
             }
         }
+
+
+        img_back_pass.setOnClickListener { in_pass.visibility = View.GONE
+            arrayOf(img_phone , et_phone , tv_nextPhone, in_email).forEach { it.visibility = View.VISIBLE }
+       }
     }
 
 
@@ -154,6 +155,11 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+
+    private fun lunchSignUpPage(){
+        tv_nextForgetPass.setOnClickListener { in_forgetPass.visibility = View.GONE
+        in_signUp.visibility = View.VISIBLE}
+    }
 
     private fun lunchHomeActivity() {
         tv_nextPass.setOnClickListener {
