@@ -7,44 +7,44 @@
     app:cardCornerRadius="10dp"
     app:cardElevation="?cardElevation">
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:backgroundTint="@null">
-
-    <include
-        android:id="@+id/rc"
-        layout="@layout/box_reason_c" />
-
-    <include
-        android:id="@+id/sp"
-        layout="@layout/box_spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rc" />
-
-    <include
-        android:id="@+id/ex"
-        layout="@layout/box_explain_reason_cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sp" />
-
-    <TextView
-        android:id="@+id/send"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_below="@id/ex"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/item_btn_background"
-        android:backgroundTint="@null"
-        android:fontFamily="@font/iran_sans"
-        android:gravity="center"
-        android:text="ارسال"
-        android:textColor="@color/white"
-        android:textSize="14dp" />
+        android:layout_height="wrap_content"
+        android:backgroundTint="@null">
 
-</RelativeLayout>
+        <include
+            android:id="@+id/rc"
+            layout="@layout/box_reason_c" />
+
+        <include
+            android:id="@+id/sp"
+            layout="@layout/box_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rc" />
+
+        <include
+            android:id="@+id/ex"
+            layout="@layout/box_explain_reason_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sp" />
+
+        <TextView
+            android:id="@+id/send"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_below="@id/ex"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/item_btn_background"
+            android:backgroundTint="@null"
+            android:fontFamily="@font/iran_sans"
+            android:gravity="center"
+            android:text="ارسال"
+            android:textColor="@color/white"
+            android:textSize="14dp" />
+
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

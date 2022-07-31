@@ -40,6 +40,7 @@ class LoginActivity : AppCompatActivity() {
         initEditTextVerification()
     }
 
+
     private fun textWatcher(et_1 : EditText, et_2 : EditText){
         et_1.addTextChangedListener(object : TextWatcher {
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
@@ -60,8 +61,6 @@ class LoginActivity : AppCompatActivity() {
         textWatcher(et3,et4)
         textWatcher(et4,et5)
     }
-
-
 
 
     private fun lunchPhonePage() {

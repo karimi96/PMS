@@ -88,7 +88,7 @@
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         style="@style/CustomGuideline"
-        app:layout_constraintGuide_begin="315dp" />
+        app:layout_constraintGuide_percent="0.43091655" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -108,7 +108,7 @@
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline8"
         style="@style/CustomGuideline"
-        app:layout_constraintGuide_percent="0.069767445" />
+        app:layout_constraintGuide_percent="0.04" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

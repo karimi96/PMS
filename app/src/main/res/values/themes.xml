@@ -133,6 +133,8 @@
         <item name="colorSecondary">@color/blue_night</item>
         <item name="background">?background</item>
         <item name="android:textColor">?colorPrimaryVariant</item>
+        <item name="android:textColorPrimary">?android:textColorPrimary</item>
+        <item name="android:textColorSecondary">?android:textColorSecondary</item>
 
         <!--        <item name="android:backgroundDimAmount">0.3</item>-->
         <!--        <item name="android:windowFrame">@null</item>-->
