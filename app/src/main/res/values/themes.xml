@@ -150,7 +150,7 @@
         <!--        <item name="colorOnBackground">@android:color/holo_blue_dark</item>-->
 
         <item name="backgroundColor">?android:textColorPrimary</item>
-<!--        <item name="android:backgroundTint">?colorOnPrimary</item>-->
+        <item name="android:backgroundTint">@color/white</item>
         <item name="bottomSheetStyle">@style/BottomSheet</item>
     </style>
 

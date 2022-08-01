@@ -103,9 +103,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/line1"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="19dp"
-        android:thumbTint="@color/blue_night" />
+        android:thumb="@drawable/item_custom_thumb"
+        android:track="@drawable/item_custom_track" />
 
 
     <TextView
