@@ -31,7 +31,6 @@
         android:text="لطفا شماره همراه خود را وارد نمایید."
         android:textColor="?android:textColorPrimary"
         android:textSize="13dp"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline" />
 
@@ -41,7 +40,7 @@
         style="@style/CustomTextInputLayout"
         android:layout_marginStart="31dp"
         android:layout_marginEnd="35dp"
-        android:hint="تلفن همراه"
+        android:hint="ممممم"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintTop_toTopOf="@+id/guideline6"
         tools:ignore="MissingConstraints">
