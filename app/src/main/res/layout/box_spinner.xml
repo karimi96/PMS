@@ -18,9 +18,9 @@
         app:boxCornerRadiusBottomStart="5dp"
         app:boxCornerRadiusTopEnd="5dp"
         app:boxCornerRadiusTopStart="5dp"
-        app:boxStrokeColor="?android:fillColor"
+        app:boxStrokeColor="?android:strokeColor"
         app:boxStrokeWidth="1dp"
-        app:endIconDrawable="@drawable/more_b_ic"
+        app:endIconDrawable="@drawable/item_select_more_spinner"
         app:endIconTint="?android:fillColor"
         app:hintAnimationEnabled="false"
         app:hintEnabled="false">
