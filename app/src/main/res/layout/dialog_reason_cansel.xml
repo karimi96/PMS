@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:foreground="@drawable/item_border_dialog"
     app:cardCornerRadius="10dp"
+    android:backgroundTint="?colorSecondary"
     app:cardElevation="?cardElevation">
 
     <RelativeLayout

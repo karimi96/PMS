@@ -130,6 +130,11 @@ class HomeActivity : AppCompatActivity(), FilterAdapter.Listener, RequestAdapter
     }
 
 
+//    private fun checkDialog(){
+//        var
+//    }
+
+
     override fun showDialogCustomerDetail() {
         val metrics = resources.displayMetrics
         val width = metrics.widthPixels
