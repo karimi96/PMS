@@ -132,83 +132,78 @@ class HomeActivity : AppCompatActivity(), FilterAdapter.Listener, RequestAdapter
     }
 
 
-//    private fun checkDialog(){
-//        var
-//    }
-
-
     override fun showDialogCustomerDetail() {
-        val metrics = resources.displayMetrics
-        val width = metrics.widthPixels
-        val height = metrics.heightPixels
+            val metrics = resources.displayMetrics
+            val width = metrics.widthPixels
+            val height = metrics.heightPixels
 
-        val dialog = Dialog(this)
-        dialog.setContentView(R.layout.dialog_customer_detail)
-        dialog.setCancelable(false)
-        dialog.window?.attributes?.windowAnimations = R.style.DialogAnimation
-        dialog.window?.setBackgroundDrawableResource(R.drawable.item_border_dialog)
-        dialog.show()
+            val dialog = Dialog(this)
+            dialog.setContentView(R.layout.dialog_customer_detail)
+            dialog.setCancelable(false)
+            dialog.window?.attributes?.windowAnimations = R.style.DialogAnimation
+            dialog.window?.setBackgroundDrawableResource(R.drawable.item_border_dialog)
+            dialog.show()
 
-        dialog.window?.setLayout(((6.3 * width) / 7).toInt(), ViewGroup.LayoutParams.WRAP_CONTENT)
+            dialog.window?.setLayout(
+                ((6.3 * width) / 7).toInt(),
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            )
 
 
-        lunchMap(dialog)
-        dialog.close_detail.setOnClickListener { dialog.dismiss() }
+            lunchMap(dialog)
+            dialog.close_detail.setOnClickListener {
+                dialog.dismiss()
+            }
 
-        var k = 0
-        dialog.tv_showMore.setOnClickListener {
-            k++
-            if (k % 2 != 0) {
-                arrayOf(dialog.passage_short, dialog.img_showMore_down).forEach {
-                    it.visibility = View.GONE
-                }
+            var k = 0
+            dialog.tv_showMore.setOnClickListener {
+                k++
+                if (k % 2 != 0) {
+                    arrayOf(dialog.passage_short, dialog.img_showMore_down).forEach {
+                        it.visibility = View.GONE
+                    }
 
-                arrayOf(dialog.passage_long, dialog.img_showMore_up).forEach {
-                    it.visibility = View.VISIBLE
-                }
+                    arrayOf(dialog.passage_long, dialog.img_showMore_up).forEach {
+                        it.visibility = View.VISIBLE
+                    }
 
-                dialog.scroll.post { dialog.scroll.fullScroll(View.FOCUS_DOWN) }
+                    dialog.scroll.post { dialog.scroll.fullScroll(View.FOCUS_DOWN) }
 
-            } else {
-                arrayOf(dialog.passage_long, dialog.img_showMore_up).forEach {
-                    it.visibility = View.GONE
-                }
+                } else {
+                    arrayOf(dialog.passage_long, dialog.img_showMore_up).forEach {
+                        it.visibility = View.GONE
+                    }
 
-                arrayOf(dialog.passage_short, dialog.img_showMore_down).forEach {
-                    it.visibility = View.VISIBLE
+                    arrayOf(dialog.passage_short, dialog.img_showMore_down).forEach {
+                        it.visibility = View.VISIBLE
+                    }
                 }
             }
-        }
 
 
-        dialog.tv_doing.setOnClickListener {
-            arrayOf(dialog.linear_done_cancel, dialog.posModel_t).forEach {
-                it.visibility = View.VISIBLE
+            dialog.tv_doing.setOnClickListener {
+                arrayOf(dialog.linear_done_cancel, dialog.posModel_t).forEach {
+                    it.visibility = View.VISIBLE
+                }
+                arrayOf(
+                    dialog.tv_doing,
+                    dialog.close_detail,
+                    dialog.posModel,
+                    dialog.posIcon
+                ).forEach { it.visibility = View.GONE }
+                dialog.setCancelable(true)
             }
-            arrayOf(
-                dialog.tv_doing,
-                dialog.close_detail,
-                dialog.posModel,
-                dialog.posIcon
-            ).forEach { it.visibility = View.GONE }
-            dialog.setCancelable(true)
-//            dialog.linear_done_cancel.visibility = View.VISIBLE
-//            dialog.tv_doing.visibility = View.GONE
-//            dialog.close_detail.visibility = View.GONE
-//            dialog.posModel_t.visibility = View.VISIBLE
-//            dialog.posModel.visibility = View.GONE
-//            dialog.posIcon.visibility = View.GONE
-        }
 
-        dialog.tv_cancel.setOnClickListener {
-            dialog.dismiss()
-            initDialogReasonOfCancel()
-        }
+            dialog.tv_cancel.setOnClickListener {
+                dialog.dismiss()
+                initDialogReasonOfCancel()
+            }
 
-        dialog.tv_done.setOnClickListener {
-            dialog.dismiss()
-            initDialogSaveActivity()
-        }
+            dialog.tv_done.setOnClickListener {
+                dialog.dismiss()
+                initDialogSaveActivity()
+            }
+
     }
 
 
