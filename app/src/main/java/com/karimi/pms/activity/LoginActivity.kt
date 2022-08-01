@@ -163,6 +163,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun lunchHomeActivity() {
         tv_nextPass.setOnClickListener {
+            in_pass.visibility = View.GONE
             startActivity(Intent(baseContext, HomeActivity::class.java))
             finish()
         }

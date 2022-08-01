@@ -40,7 +40,7 @@
         style="@style/CustomTextInputLayout"
         android:layout_marginStart="31dp"
         android:layout_marginEnd="35dp"
-        android:hint="ممممم"
+        android:hint="تلفن همراه"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintTop_toTopOf="@+id/guideline6"
         tools:ignore="MissingConstraints">
