@@ -1,6 +1,7 @@
 package com.karimi.pms.activity
 
 import android.app.Dialog
+import android.graphics.Typeface
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
@@ -30,6 +31,7 @@ import org.osmdroid.tileprovider.tilesource.TileSourceFactory
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.CustomZoomButtonsController
 import org.osmdroid.views.overlay.Marker
+
 
 class HomeActivity : AppCompatActivity(), FilterAdapter.Listener, RequestAdapter.Listener {
     var listRequest: ArrayList<Request> = ArrayList()
@@ -246,17 +248,15 @@ class HomeActivity : AppCompatActivity(), FilterAdapter.Listener, RequestAdapter
             Tools.toast(baseContext,"با موفقیت ارسال شد")
             d.dismiss()
         }
-
         initBoxSpinner(d)
     }
 
 
     private fun initBoxSpinner(d: Dialog) {
         val reason = resources.getStringArray(R.array.ReasonOfCancel)
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, reason)
+        val adapter = ArrayAdapter(this, R.layout.simple_list_item_spinner, reason)
         d.auto_complete_txt.setAdapter(adapter)
         d.auto_complete_txt.threshold = 0
-        d.auto_complete_txt.text
     }
 
 
